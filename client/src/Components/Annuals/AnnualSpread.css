@@ -1,0 +1,58 @@
+.month-container {
+  height: 300px;
+  width: 36%;
+  /* font-size: 64px; */
+}
+.calendar-header {
+  font-size: 48px;
+  background-color: rgba(188, 184, 177, 0.3);
+  font-weight: bold;
+  color: var(--coffee-brown);
+}
+table.calendar thead th.bolder {
+  font-weight: bold;
+}
+.month {
+  /* font-size: 36px !important; */
+  width: 300px !important;
+  /* height: 250px !important; */
+  margin-bottom: 100px !important;
+}
+.month-title {
+  font-size: 125%;
+}
+/* styling for the month name like January, February etc */
+.calendar table.month th.month-title {
+  font-size: 21px;
+  padding-bottom: 15px;
+}
+/* Styling for the day header - su mo etc */
+.calendar table.month th.day-header {
+  font-size: 21px;
+  padding: 10px;
+}
+
+/* styling for each date in a month */
+.calendar table.month td.day .day-content {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 5px 6px;
+  font-size: 21px;
+}
+.calendar .months-container .month-container.month-3 {
+  width: 20%;
+}
+.calendar .months-container .month-container {
+  float: left;
+  text-align: center;
+  height: 300px;
+  padding: 0;
+  margin-bottom: 50px;
+}
+.calendar .calendar-header .year-title {
+  font-weight: bold;
+  text-align: center;
+  height: 30px;
+  width: auto;
+}

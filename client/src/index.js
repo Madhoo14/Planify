@@ -1,7 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// google font through webfont loader
+// import WebFont from "webfontloader";
 
 import App from "./App";
+// WebFont.load({
+//   google: {
+//     families: ["Happy Monkey Web:300,400,700", "sans-serif"],
+//   },
+// });
 
 ReactDOM.render(
   <React.StrictMode>
