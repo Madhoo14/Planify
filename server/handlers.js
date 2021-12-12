@@ -2,7 +2,7 @@
 const { MongoClient } = require("mongodb");
 require("dotenv").config();
 const { MONGO_URI } = process.env;
-
+const { API_KEY } = process.env;
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -34,7 +34,7 @@ const createDailySpread = async (req, res) => {
       },
       overallMood: "satisfied",
       gratitude: "",
-      weather: { city: "", temp: "" },
+      weather: { city: "", Min: "", Max: "", description: "" },
     });
     res.status(200).json({ status: 200, data: result });
   } catch (err) {
@@ -68,9 +68,9 @@ const getDailySpread = async (req, res) => {
             text: "",
             author: "",
           },
-          overallMood: "satisfied",
+          overallMood: "",
           gratitude: "",
-          weather: { city: "", temp: "" },
+          weather: { city: "", Min: "", Max: "", description: "" },
         });
       res.status(200).json({ status: 200, data: createNewDailySpread });
       console.log(res.data);
@@ -81,4 +81,30 @@ const getDailySpread = async (req, res) => {
     client.close();
   }
 };
-module.exports = { createDailySpread, getDailySpread };
+const postDailySpread = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+  const _id = req.body._id;
+
+  try {
+    await client.connect();
+
+    // if (dailySpreadByDateId) {
+    //   res.status(200).json({ status: 200, data: dailySpreadByDateId });
+    //   console.log(res.data);
+    // } else {
+    const postNewDailySpread = await db.collection("daily-spread").replaceOne(
+      {
+        _id: _id,
+      },
+      req.body
+    );
+    res.status(200).json({ status: 200, data: postNewDailySpread });
+    console.log(res.data);
+  } catch (err) {
+    console.log(err.message);
+  } finally {
+    client.close();
+  }
+};
+module.exports = { createDailySpread, getDailySpread, postDailySpread };

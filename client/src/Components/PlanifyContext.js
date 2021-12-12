@@ -1,13 +1,13 @@
-import React, { useContext, useState, useEffect, createContext } from "react";
+import React, { useState, useEffect, createContext } from "react";
 
-const PlanifyContext = createContext(null);
+export const PlanifyContext = createContext(null);
 
 const PlanifyProvider = ({ children }) => {
   //the state and functions for the Quote component
-  const [quote, setQuote] = useState(quote);
+  const [quote, setQuote] = useState("");
   let num = Math.floor(Math.random() * 1643);
   useEffect(() => {
-    if (quote == "") {
+    if (quote === "") {
       fetch("https://type.fit/api/quotes")
         .then(function (response) {
           return response.json();
@@ -24,6 +24,16 @@ const PlanifyProvider = ({ children }) => {
   const handleEntry = (e) => {
     setEntry(e.target.value);
   };
+
+  //state and functions for todo edit
+  const [edit, setEdit] = useState({ id: null, value: "" });
+  const submitUpdate = (value) => {
+    updateTodo(edit.id, value);
+    setEdit({
+      id: null,
+      value: "",
+    });
+  };
   // states and functions for Todo
   const [input, setInput] = useState(edit ? edit.value : "");
   const handleInputChange = (ev) => {
@@ -37,15 +47,6 @@ const PlanifyProvider = ({ children }) => {
     });
 
     setInput("");
-  };
-  //state and functions for todo edit
-  const [edit, setEdit] = useState({ id: null, value: "" });
-  const submitUpdate = (value) => {
-    updateTodo(edit.id, value);
-    setEdit({
-      id: null,
-      value: "",
-    });
   };
   //state and functions to list the todo items
   const [todos, setTodos] = useState(null);
@@ -90,7 +91,7 @@ const PlanifyProvider = ({ children }) => {
     setGratitude(e.target.value);
   };
   // states and functions for overall mood tracking
-  const [mood, setMood] = useState(null);
+  const [mood, setMood] = useState("");
   const labels = [
     "great",
     "sad",
@@ -129,6 +130,21 @@ const PlanifyProvider = ({ children }) => {
   const handleProductive = () => {
     setMood(labels[8]);
   };
+  // state and fetch for weather
+
+  const [weather, setWeather] = useState(null);
+  //   const key = process.env.REACT_APP_WEATHER_API_KEY;
+  //   console.log(process.env.REACT_APP_WEATHER_API_KEY);
+  useEffect(() => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=waterloo&units=metric&appid=3dcd094d337af270bbe00edaf33ad547`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        setWeather(data);
+      });
+  }, []);
   return (
     <PlanifyContext.Provider
       value={{
@@ -165,6 +181,8 @@ const PlanifyProvider = ({ children }) => {
         handleBored,
         handleAngry,
         handleProductive,
+        weather,
+        setWeather,
       }}
     >
       {children}

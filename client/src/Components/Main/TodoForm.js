@@ -1,13 +1,23 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import styled from "styled-components";
+import { PlanifyContext } from "../PlanifyContext";
 
 function TodoForm({ edit, submitUpdate }) {
+  // const {
+  //   input,
+  //   setInput,
+  //   handleInputChange,
+  //   handleSubmit,
+  //   edit,
+  //   setEdit,
+  //   submitUpdate,
+  // } = useContext(PlanifyContext);
   const [input, setInput] = useState(edit ? edit.value : "");
-  const inputRef = useRef(null);
+  // const inputRef = useRef(null);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   const handleInputChange = (ev) => {
     setInput(ev.target.value);
@@ -32,7 +42,7 @@ function TodoForm({ edit, submitUpdate }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            ref={inputRef}
+            // ref={inputRef}
           />
           <TodoButton>Update item</TodoButton>
         </>
@@ -44,7 +54,7 @@ function TodoForm({ edit, submitUpdate }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            ref={inputRef}
+            // ref={inputRef}
           />
           <TodoButton>Add Todo</TodoButton>
         </>

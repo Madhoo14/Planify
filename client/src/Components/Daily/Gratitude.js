@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
+import { PlanifyContext } from "../PlanifyContext";
+function Gratitude({ gratitude, setGratitude, handleGratitude }) {
+  // const [gratitude, setGratitude] = useState("");
+  // const { gratitude, setGratitude, handleGratitude } =
+  //   useContext(PlanifyContext);
 
-function Gratitude() {
-  const [gratitude, setGratitude] = useState("");
-
-  const handleGratitude = (e) => {
-    setGratitude(e.target.value);
-  };
+  // const handleGratitude = (e) => {
+  //   setGratitude(e.target.value);
+  // };
 
   return (
     <GratitudeWrapper>

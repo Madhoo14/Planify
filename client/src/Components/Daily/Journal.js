@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
-import PlanifyContext from "../PlanifyContext";
+import { PlanifyContext } from "../PlanifyContext";
 
-function Journal({ journal }) {
-  const [entry, setEntry] = useState(journal);
-  const handleEntry = (e) => {
-    setEntry(e.target.value);
-  };
-  // const { entry, handleEntry } = useContext(PlanifyContext);
+function Journal({ entry, setEntry, handleEntry }) {
+  // const { entry, setEntry, handleEntry } = useContext(PlanifyContext);
+  // const [entry, setEntry] = useState(journal);
+  // const handleEntry = (e) => {
+  //   setEntry(e.target.value);
+  // };
+
   return (
     <JournalWrapper>
       <Form>

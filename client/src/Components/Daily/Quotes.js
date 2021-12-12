@@ -1,24 +1,24 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
 import styled from "styled-components";
-import PlanifyContext from "../PlanifyContext";
+import { PlanifyContext } from "../PlanifyContext";
 
-function Quotes(props) {
-  const [quote, setQuote] = useState(props.quote);
-  let num = Math.floor(Math.random() * 1643);
-  useEffect(() => {
-    if (quote == "") {
-      fetch("https://type.fit/api/quotes")
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (data) {
-          console.log(data[num]);
-          setQuote(data[num]);
-        });
-    }
-  }, []);
-  // const { quote } = useContext(PlanifyContext);
+function Quotes({ quote, setQuote }) {
+  // const [quote, setQuote] = useState(props.quote);
+  // let num = Math.floor(Math.random() * 1643);
+  // useEffect(() => {
+  //   if (quote == "") {
+  //     fetch("https://type.fit/api/quotes")
+  //       .then((response) => {
+  //         return response.json();
+  //       })
+  //       .then((data) => {
+  //         console.log(data[num]);
+  //         setQuote(data[num]);
+  //       });
+  //   }
+  // }, []);
+  // const { quote, setQuote } = useContext(PlanifyContext);
   return (
     <QuoteContainer>
       <DailyQuote>

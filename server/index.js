@@ -3,7 +3,11 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const { createDailySpread, getDailySpread } = require("./handlers");
+const {
+  createDailySpread,
+  getDailySpread,
+  postDailySpread,
+} = require("./handlers");
 const PORT = 8000;
 
 const app = express();
@@ -39,6 +43,8 @@ app.use("/", express.static(__dirname + "/"));
 app.post("/api/add-daily-entries", createDailySpread);
 
 app.get("/dailyspread/:dateId", getDailySpread);
+
+app.post("/api/postdailyspread", postDailySpread);
 
 // end point for when a
 
