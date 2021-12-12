@@ -16,7 +16,7 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
     });
   };
   if (edit.id) {
-    return <TodoForm edit={edit} onSubmit={submitUpdate} />;
+    return <TodoForm edit={edit} submitUpdate={submitUpdate} />;
   }
   return todos?.map((todo, index) => (
     <div key={index}>

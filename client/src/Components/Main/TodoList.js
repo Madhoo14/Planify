@@ -40,7 +40,7 @@ function TodoList({ todo }) {
     setTodos(updatedTodos);
   };
   return (
-    <div>
+    <Container>
       <Head1> What's the plan today?</Head1>
       <TodoForm onSubmit={addTodo} />
       <Todo
@@ -49,7 +49,7 @@ function TodoList({ todo }) {
         removeTodo={removeTodo}
         updateTodo={updateTodo}
       />
-    </div>
+    </Container>
   );
 }
 const Head1 = styled.h1`
@@ -57,5 +57,8 @@ const Head1 = styled.h1`
   margin: 32px 0;
   color: var(--coffee-brown);
   font-size: 24px;
+`;
+const Container = styled.div`
+  width: 40%;
 `;
 export default TodoList;

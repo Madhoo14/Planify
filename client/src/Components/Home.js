@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import styled from "styled-components";
 import SideBar from "./Main/SideBar";
 import Journal from "./Daily/Journal";
+import Quotes from "./Daily/Quotes";
 
 import TodoList from "./Main/TodoList";
 import OverallMood from "./Daily/OverallMood";
@@ -12,9 +13,10 @@ const Home = () => {
     <Main>
       {/* <Main> */}
       <SideBar />
-      <TodoList />
+      {/* <TodoList /> */}
       {/* </Main> */}
       {/* <HomeFooter> */}
+      <Quotes />
       <Journal />
       <OverallMood />
 

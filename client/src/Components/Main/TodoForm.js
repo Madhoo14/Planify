@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 
-function TodoForm({ edit, onSubmit }) {
+function TodoForm({ edit, submitUpdate }) {
   const [input, setInput] = useState(edit ? edit.value : "");
   const inputRef = useRef(null);
 
@@ -14,7 +14,7 @@ function TodoForm({ edit, onSubmit }) {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({
+    submitUpdate({
       id: Math.floor(Math.random() * 5000000),
       text: input,
     });

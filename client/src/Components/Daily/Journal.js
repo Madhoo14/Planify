@@ -16,7 +16,7 @@ function Journal({ journal }) {
           id="journal"
           name="journal"
           rows="16"
-          columns="640000"
+          columns="320000"
           placeholder="you can journal about your day here..."
           value={entry}
           onChange={(e) => handleEntry(e)}
@@ -28,7 +28,7 @@ function Journal({ journal }) {
 const Form = styled.form``;
 const Label = styled.label``;
 const TextArea = styled.textarea`
-  width: 75%;
+  width: 50%;
   height: 600px;
   font-size: 32px;
   outline: none;

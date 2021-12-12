@@ -22,7 +22,7 @@ const SideBarContainer = styled.div`
   background-color: rgb(70, 63, 58, 0.2); // this is the color
   border-radius: 10px;
   margin-top: 50px;
-  position: fixed;
+  /* position: fixed; */
   top: 100px;
   right: 0;
 `;
