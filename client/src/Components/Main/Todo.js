@@ -8,7 +8,6 @@ import { TiEdit } from "react-icons/ti";
 
 function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
   const [edit, setEdit] = useState({ id: null, value: "" });
-
   const submitUpdate = (value) => {
     updateTodo(edit.id, value);
     setEdit({
@@ -16,11 +15,10 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
       value: "",
     });
   };
-
   if (edit.id) {
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
-  return todos.map((todo, index) => (
+  return todos?.map((todo, index) => (
     <div key={index}>
       <Wrapper>
         {todo.isComplete ? (
@@ -32,7 +30,6 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
             {todo.text}
           </Incomplete>
         )}
-
         <Icons>
           <RiCloseCircleLine onClick={() => removeTodo(todo.id)} />
           <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} />

@@ -69,7 +69,7 @@ const TodoButton = styled.button`
   color: var(--coffee-brown);
   font-weight: bold;
   font-family: "Happy Monkey";
-  background-color: #f4f3ee;
+  background-color: rgb(70, 63, 58, 0.2);
   border: solid 1px #bcb8b1;
 `;
 const TodoInput = styled.input`
@@ -83,5 +83,6 @@ const TodoInput = styled.input`
   margin-right: 10px;
   outline: none;
   color: #463f3a;
+  background-color: rgb(70, 63, 58, 0.2);
 `;
 export default GoalsForm;

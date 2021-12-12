@@ -3,7 +3,7 @@ const path = require("path");
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
-const {} = require("./handlers");
+const { createDailySpread, getDailySpread } = require("./handlers");
 const PORT = 8000;
 
 const app = express();
@@ -34,5 +34,12 @@ app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/", express.static(__dirname + "/"));
 // the end points go here below this line
+
+//api to create daily entries document in the daily-spread collection
+app.post("/api/add-daily-entries", createDailySpread);
+
+app.get("/dailyspread/:dateId", getDailySpread);
+
+// end point for when a
 
 app.listen(PORT, () => console.info(`Listening on port ${PORT}`));

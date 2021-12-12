@@ -11,6 +11,7 @@ export default createGlobalStyle`
       --almost-white: #F4F3EE;
       --skin:#E0AFA0;
       --max-content-width: 1200px;
+      --background-transparent: rgb(244, 243, 238,0.3);
       --font-family: 'Happy Monkey', cursive;
     }
 *{
@@ -44,9 +45,14 @@ export default createGlobalStyle`
         display: block;
     }
     body {
-        min-height: 100vh;
-display: flex;
-flex-direction: column;
+    background: var(--background-transparent);
+    } 
+
+    html, body, #root{
+height: 100%;
+width:100%;
+margin: 0;
+border: solid;
     }
     ol, ul {
         list-style: none;

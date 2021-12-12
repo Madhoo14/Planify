@@ -8,12 +8,10 @@ import SideBar from "../Main/SideBar";
 const AnnualGoals = () => {
   return (
     <Container>
-      <Header />
       <Content>
         <GoalsList />
         <SideBar />
       </Content>
-      <Footer />
     </Container>
   );
 };

@@ -7,7 +7,8 @@ const SideBar = () => {
     <SideBarContainer>
       <SideBarNav to="/annualspread">Annual Spread</SideBarNav>
       <SideBarNav to="/annualgoals">Annual Goals</SideBarNav>
-      <SideBarNav to="/monthlyspread">MonthlySpread</SideBarNav>
+      <SideBarNav to="/monthlyspread">Monthly Spread</SideBarNav>
+      <SideBarNav to="/dailyspread">Daily Spread</SideBarNav>
     </SideBarContainer>
   );
 };

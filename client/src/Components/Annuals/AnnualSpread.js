@@ -1,44 +1,59 @@
 import React, { useState } from "react";
-// import { CalendarComponent } from "@syncfusion/ej2-react-calendars";
+import { useNavigate } from "react-router";
 import styled from "styled-components";
-// import Calendar from "react-calendar";
-// import "react-calendar/dist/Calendar.css";
+
 import Calendar from "rc-year-calendar";
 import Header from "../Header";
 import Footer from "../Footer";
 import "./AnnualSpread.css";
 import SideBar from "../Main/SideBar";
-import MoodTracker from "../Daily/MoodTracker";
+// import MoodTracker from "../Daily/MoodTracker";
+
+const moment = require("moment");
 
 const AnnualSpread = () => {
-  const [date, setDate] = useState(null);
+  const [dateId, setDateId] = useState(null);
+  const navigate = useNavigate();
+  // const [momentDate, setMomentDate] = useState(null);
+
   const clicker = (date, event) => {
-    // a fetch will go here to fetch the an annual page corresponding to that date. If a mongodb entry exists it will bring on that page if not it will
+    // a fetch will go here to fetch the annual page corresponding to that date. If a mongodb entry exists it will bring on that page if not it will
     //bring up an empty page for daily spread
+
     console.log(date.date);
-    setDate(date);
+    let temp = moment(date.date).format("DDMMMYYYY");
+    setDateId(temp);
+    console.log(temp);
+    fetch(`/dailyspread/${temp}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status !== 200) {
+          navigate("/errorpage");
+        } else {
+          navigate(`/dailyspread/${temp}`);
+          console.log(data);
+        }
+      });
   };
+
   return (
     <>
-      <Header />
       <CalendarContainer>
         <CalendarPart>
           <Calendar
-            value={date}
+            value={dateId}
             onDayClick={(date, event) => clicker(date, event)}
           />
         </CalendarPart>
         <SideBar />
       </CalendarContainer>
-      <MoodTracker />
-      <Footer />
+      {/* <MoodTracker /> */}
     </>
   );
-  console.log(date);
 };
 const CalendarContainer = styled.div`
   min-height: 800px;
-  width: 64%;
+  width: 70%;
   margin-top: 100px;
   /* background-color: rgba(224, 175, 160, 0.2); */
   color: var(--coffee-brown);

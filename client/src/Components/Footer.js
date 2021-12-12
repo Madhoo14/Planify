@@ -16,7 +16,7 @@ const QuoteSpace = styled.div`
 const Wrapper = styled.footer`
   height: 100px;
   width: 100vw;
-  background: rgba(188, 184, 177, 0.3);
+  background: rgba(188, 184, 177);
   position: sticky;
   left: 0;
   bottom: 0;

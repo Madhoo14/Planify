@@ -34,8 +34,21 @@ function Goals({ goals, completeGoals, removeGoals, updateGoals }) {
         )}
 
         <Icons>
-          <RiCloseCircleLine onClick={() => removeGoals(goal.id)} />
-          <TiEdit onClick={() => setEdit({ id: goal.id, value: goal.text })} />
+          <Button
+            role="img"
+            aria-label="remove"
+            title="remove todo"
+            onClick={() => removeGoals(goal.id)}
+          >
+            <RiCloseCircleLine />
+          </Button>
+
+          <TiEdit
+            role="img"
+            aria-label="edit"
+            title="edit todo"
+            onClick={() => setEdit({ id: goal.id, value: goal.text })}
+          />
         </Icons>
       </Wrapper>
     </div>
@@ -60,6 +73,17 @@ const Incomplete = styled.div`
   margin-right: 50px;
   color: #463f3a;
   opacity: 1;
+`;
+const Button = styled.button`
+  background: none;
+  border: solid;
+  height: 75px;
+  width: 75px;
+  font-size: 60px;
+  cursor: pointer;
+  margin: 10px;
+  padding: 5px;
+  align-items: center;
 `;
 const Wrapper = styled.div`
   font-family: "Happy Monkey";

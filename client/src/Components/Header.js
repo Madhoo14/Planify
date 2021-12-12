@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   align-items: center;
   height: 100px;
   width: 100%;
-  background: rgba(188, 184, 177, 0.3);
+  background: rgba(188, 184, 177);
   position: sticky;
   color: #463f3a;
   font-family: Var(--font-family);

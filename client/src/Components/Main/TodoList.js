@@ -3,8 +3,8 @@ import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 import styled from "styled-components";
 
-function TodoList() {
-  const [todos, setTodos] = useState([]);
+function TodoList({ todo }) {
+  const [todos, setTodos] = useState(todo);
 
   //function to add todo items
   const addTodo = (todo) => {

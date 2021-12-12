@@ -3,20 +3,21 @@ import Header from "./Header";
 import Footer from "./Footer";
 import styled from "styled-components";
 import SideBar from "./Main/SideBar";
+import Journal from "./Daily/Journal";
 
 import TodoList from "./Main/TodoList";
 import OverallMood from "./Daily/OverallMood";
 const Home = () => {
   return (
     <Main>
-      <Header />
       {/* <Main> */}
       <SideBar />
       <TodoList />
       {/* </Main> */}
       {/* <HomeFooter> */}
+      <Journal />
       <OverallMood />
-      <Footer />
+
       {/* </HomeFooter> */}
       {/* // </HomeWrapper> */}
     </Main>

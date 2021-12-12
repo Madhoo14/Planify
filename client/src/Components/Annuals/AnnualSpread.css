@@ -42,6 +42,8 @@ table.calendar thead th.bolder {
 }
 .calendar .months-container .month-container.month-3 {
   width: 20%;
+  padding: 10px;
+  margin: 10px;
 }
 .calendar .months-container .month-container {
   float: left;
