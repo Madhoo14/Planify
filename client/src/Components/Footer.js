@@ -4,14 +4,25 @@ const Footer = () => {
   return (
     <Wrapper>
       <Logo>Planify</Logo>
-      <QuoteSpace></QuoteSpace>
+      <QuoteSpace>
+        A goal without a plan is just a wish{" "}
+        <Span>- Antoine de Saint-Exupéry</Span>
+      </QuoteSpace>
     </Wrapper>
   );
 };
 // QuoteSpace is the place for an api for inspirational quote.
-const QuoteSpace = styled.div`
+const QuoteSpace = styled.p`
   width: 64%;
   height: 100%;
+  font-size: 32px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+`;
+const Span = styled.span`
+  font-size: 28px;
+  opacity: 0.8;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 `;
 const Wrapper = styled.footer`
   height: 100px;
@@ -26,7 +37,7 @@ const Wrapper = styled.footer`
   display: flex;
   justify-content: space-around;
   padding: 10px 0px;
-  font-family: "Happy Monkey";
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-weight: 700;
   font-size: 30px;
   margin-top: auto;

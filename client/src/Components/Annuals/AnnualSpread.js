@@ -28,7 +28,7 @@ const AnnualSpread = () => {
       .then((data) => {
         if (data.status !== 200) {
           console.log("this isnt working");
-          // navigate("/errorpage");
+          navigate("/errorpage");
         } else {
           navigate(`/dailyspread/${temp}`);
           console.log(data);
