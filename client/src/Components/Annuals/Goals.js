@@ -37,18 +37,19 @@ function Goals({ goals, completeGoals, removeGoals, updateGoals }) {
           <Button
             role="img"
             aria-label="remove"
-            title="remove todo"
+            title="remove goal"
             onClick={() => removeGoals(goal.id)}
           >
             <RiCloseCircleLine />
           </Button>
-
-          <TiEdit
-            role="img"
-            aria-label="edit"
-            title="edit todo"
-            onClick={() => setEdit({ id: goal.id, value: goal.text })}
-          />
+          <Button>
+            <TiEdit
+              role="img"
+              aria-label="edit"
+              title="edit goal"
+              onClick={() => setEdit({ id: goal.id, value: goal.text })}
+            />
+          </Button>
         </Icons>
       </Wrapper>
     </div>
@@ -76,14 +77,15 @@ const Incomplete = styled.div`
 `;
 const Button = styled.button`
   background: none;
-  border: solid;
-  height: 75px;
-  width: 75px;
-  font-size: 60px;
+  border: none;
+  height: 64px;
+  width: 64px;
+  font-size: 40px;
   cursor: pointer;
-  margin: 10px;
+  /* margin: 5px; */
   padding: 5px;
   align-items: center;
+  color: var(--graceful-grey);
 `;
 const Wrapper = styled.div`
   font-family: "Happy Monkey";

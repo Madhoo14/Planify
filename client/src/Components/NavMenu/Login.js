@@ -6,15 +6,28 @@ import { FiUserCheck } from "react-icons/fi";
 // window.React2 = require("react");
 // console.log(window.React1 === window.React2);
 const Login = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
-    <Button onClick={() => loginWithRedirect()}>
-      <FiUserCheck />
-    </Button>
+    !isAuthenticated && (
+      <Button
+        role="img"
+        title="Log in/Sign up"
+        onClick={() => loginWithRedirect()}
+      >
+        <FiUserCheck />
+      </Button>
+    )
   );
 };
 const Button = styled.button`
-  width: 200px;
-  height: 50px;
+  width: 100px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 40px;
+  border: solid 1px var(--almost-white);
+  color: #616060;
+  margin: 15px;
+  background: rgba(188, 184, 177, 0.3);
+  cursor: pointer;
 `;
 export default Login;

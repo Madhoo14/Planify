@@ -28,7 +28,7 @@ function GoalsForm({ edit, onSubmit }) {
         <>
           <TodoInput
             type="text"
-            placeholder="Add a todo item"
+            placeholder="Add a goal item"
             value={input}
             name="text"
             onChange={handleInputChange}
@@ -40,7 +40,7 @@ function GoalsForm({ edit, onSubmit }) {
         <>
           <TodoInput
             type="text"
-            placeholder="Add a todo item"
+            placeholder="Add a goal item"
             value={input}
             name="text"
             onChange={handleInputChange}
@@ -58,6 +58,7 @@ const Form = styled.form`
   font-size: 25px;
   font-weight: bold;
   margin-bottom: 32px;
+  display: flex;
 `;
 const TodoButton = styled.button`
   border-radius: 5px;
@@ -65,21 +66,22 @@ const TodoButton = styled.button`
   height: 50px;
   width: 150px;
   padding: 0%;
-  font-size: 20px;
+  font-size: 25px;
   color: var(--coffee-brown);
   font-weight: bold;
   font-family: "Happy Monkey";
   background-color: rgb(70, 63, 58, 0.2);
-  border: solid 1px #bcb8b1;
+  border: solid 1px var(--almost-white);
 `;
 const TodoInput = styled.input`
   border-radius: 5px;
-  height: 50px;
+  height: 52.67px;
+  padding: 0%;
   width: 300px;
   font-family: "Happy Monkey";
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
-  border: solid 1px #bcb8b1;
+  border: solid 1px var(--almost-white);
   margin-right: 10px;
   outline: none;
   color: #463f3a;

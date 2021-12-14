@@ -53,10 +53,22 @@ function Todo({ todos, completeTodo, removeTodo, updateTodo }) {
               </Incomplete>
             )}
             <Icons>
-              <RiCloseCircleLine onClick={() => removeTodo(todo.id)} />
-              <TiEdit
+              <Button
+                role="img"
+                aria-label="remove"
+                title="remove item"
+                onClick={() => removeTodo(todo.id)}
+              >
+                <RiCloseCircleLine />
+              </Button>
+              <Button
+                role="img"
+                aria-aria-label="edit"
+                title="edit item"
                 onClick={() => setEdit({ id: todo.id, value: todo.text })}
-              />
+              >
+                <TiEdit />
+              </Button>
             </Icons>
           </Wrapper>
         </div>
@@ -95,5 +107,17 @@ const Wrapper = styled.div`
   height: 60px;
   border-radius: 5px;
   background-color: #f4f3ee;
+`;
+const Button = styled.button`
+  background: none;
+  border: none;
+  height: 64px;
+  width: 64px;
+  font-size: 40px;
+  cursor: pointer;
+  /* margin: 5px; */
+  padding: 5px;
+  align-items: center;
+  color: var(--graceful-grey);
 `;
 export default Todo;

@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 const moment = require("moment");
 
 const SideBar = () => {
@@ -9,9 +9,9 @@ const SideBar = () => {
 
   return (
     <SideBarContainer>
-      <SideBarNav to="/annualspread">Annual Spread</SideBarNav>
-      <SideBarNav to={`annualgoals/${thisYear}`}>Annual Goals</SideBarNav>
-      <SideBarNav to="/monthlyspread">Monthly Spread</SideBarNav>
+      <SideBarNav to={"/annualspread"}>Annual Spread</SideBarNav>
+      <SideBarNav to={`/annualgoals/${thisYear}`}>Annual Goals</SideBarNav>
+      <SideBarNav to={"/monthlyspread"}>Monthly Spread</SideBarNav>
       <SideBarNav to={`/dailyspread/${todayDate}`}>Daily Spread</SideBarNav>
     </SideBarContainer>
   );
@@ -30,7 +30,7 @@ const SideBarContainer = styled.div`
   top: 100px;
   right: 0;
 `;
-const SideBarNav = styled(NavLink)`
+const SideBarNav = styled(Link)`
   color: #616060;
   margin-left: 15px;
   text-decoration: none;
