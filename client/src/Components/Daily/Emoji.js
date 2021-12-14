@@ -2,20 +2,7 @@ import React, { useState, useContext } from "react";
 import { PlanifyContext } from "../PlanifyContext";
 import styled from "styled-components";
 
-function Emoji({
-  mood,
-  setMood,
-  handleGreat,
-  handleSad,
-  handleFrustrated,
-  handleAngry,
-  handleBored,
-  handleNeutral,
-  handleSatisfied,
-  handleUnwell,
-  handleProductive,
-  labels,
-}) {
+function Emoji({ mood, setMood, handleClickedElement, labels }) {
   //   const [isGreat, setIsGreat] = useState(false);
   //   const [isSad, setIsSad] = useState(false);
   //   const [isUnwell, setIsUnwell] = useState(false);
@@ -98,82 +85,91 @@ function Emoji({
       <EmojiContainer>
         <Heading>Overall mood for the day</Heading>
         <Button
-          onClick={handleGreat}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="great"
           title="great"
           role="img"
+          name="great"
           style={{ opacity: mood === labels[0] ? "1" : "0.5" }}
         >
           😁
         </Button>
         <Button
-          onClick={handleSad}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="sad"
           title="not so good"
           role="img"
+          name="sad"
           style={{ opacity: mood === labels[1] ? "1" : "0.5" }}
         >
           🙁
         </Button>
         <Button
-          onClick={handleUnwell}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="unwell"
           title="unwell"
           role="img"
+          name="unwell"
           style={{ opacity: mood === labels[2] ? "1" : "0.5" }}
         >
           🤕
         </Button>
         <Button
-          onClick={handleNeutral}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="neutral"
           title="neutral"
           role="img"
+          name="neutral"
           style={{ opacity: mood === labels[3] ? "1" : "0.5" }}
         >
           😐
         </Button>
         <Button
-          onClick={handleSatisfied}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="satisfied"
           title="pleased"
           role="img"
+          name="satisfied"
           style={{ opacity: mood === labels[4] ? "1" : "0.5" }}
         >
           😌
         </Button>
         <Button
-          onClick={handleFrustrated}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="frustrated"
           title="frustrated"
           role="img"
+          name="frustrated"
           style={{ opacity: mood === labels[5] ? "1" : "0.5" }}
         >
           😩
         </Button>
         <Button
-          onClick={handleBored}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="bored face"
           title="meh"
           role="img"
+          name="bored"
           style={{ opacity: mood === labels[6] ? "1" : "0.5" }}
         >
           😶
         </Button>
         <Button
-          onClick={handleAngry}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="angry red face"
           title="mad"
+          name="angry"
           role="img"
           style={{ opacity: mood === labels[7] ? "1" : "0.5" }}
         >
           😡
         </Button>
         <Button
-          onClick={handleProductive}
+          onClick={(e) => handleClickedElement(e)}
           aria-label="productive cool face with sun glasses"
           title="productive"
           role="img"
+          name="productive"
           style={{ opacity: mood === labels[8] ? "1" : "0.5" }}
         >
           😎

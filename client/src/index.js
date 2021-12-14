@@ -1,18 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// google font through webfont loader
-// import WebFont from "webfontloader";
-import { PlanifyContext } from "./Components/PlanifyContext";
 
+// import { PlanifyContext } from "./Components/PlanifyContext";
+import { Auth0Provider } from "@auth0/auth0-react";
 import App from "./App";
-// WebFont.load({
-//   google: {
-//     families: ["Happy Monkey Web:300,400,700", "sans-serif"],
-//   },
-// });
-const rootElement = document.getElementById("root");
+const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+// const domain = "dev-81n5f7im.us.auth0.com";
+// const clientId = "WrYXgJo57MDSkIrngU85tGp9uJFqouHW";
+
+// const rootElement = document.getElementById("root");
 ReactDOM.render(
-  <App />,
+  <Auth0Provider
+    domain={domain}
+    clientId={clientId}
+    redirectUri={"http://localhost:3000"}
+  >
+    <App />
+  </Auth0Provider>,
 
   document.getElementById("root")
 );

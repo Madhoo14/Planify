@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import Login from "./NavMenu/Login";
+import Logout from "./NavMenu/Logout";
 import NavMenu from "./NavMenu/NavMenu";
 import Search from "./NavMenu/Search";
 
@@ -11,6 +13,8 @@ const Header = () => {
       </Left>
       <Right>
         <Search />
+        <Login />
+        <Logout />
       </Right>
     </Wrapper>
   );

@@ -88,40 +88,15 @@ function DailySpread() {
   ];
   // console.log(mood);
   // functions for Button onClick for different buttons
-
-  const handleGreat = () => {
-    setMood(labels[0]);
-  };
-  const handleSad = () => {
-    setMood(labels[1]);
-  };
-  const handleUnwell = () => {
-    setMood(labels[2]);
-  };
-  const handleNeutral = () => {
-    setMood(labels[3]);
-  };
-  const handleSatisfied = () => {
-    setMood(labels[4]);
-  };
-  const handleFrustrated = () => {
-    setMood(labels[5]);
-  };
-  const handleBored = () => {
-    setMood(labels[6]);
-  };
-  const handleAngry = () => {
-    setMood(labels[7]);
-  };
-  const handleProductive = () => {
-    setMood(labels[8]);
+  const handleClickedElement = (ev) => {
+    setMood(ev.currentTarget.name);
   };
 
   //weather
   const [weather, setWeather] = useState(null);
   const getWeather = () => {
     fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=waterloo&units=metric&appid=3dcd094d337af270bbe00edaf33ad547`
+      `https://api.openweathermap.org/data/2.5/weather?q=waterloo&units=metric&appid=${process.env.REACT_APP_WEATHER_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -268,15 +243,7 @@ function DailySpread() {
         <OverallMood
           mood={mood}
           setMood={setMood}
-          handleGreat={handleGreat}
-          handleSad={handleSad}
-          handleFrustrated={handleFrustrated}
-          handleAngry={handleAngry}
-          handleBored={handleBored}
-          handleNeutral={handleNeutral}
-          handleSatisfied={handleSatisfied}
-          handleUnwell={handleUnwell}
-          handleProductive={handleProductive}
+          handleClickedElement={handleClickedElement}
           labels={labels}
         />
         <Gratitude

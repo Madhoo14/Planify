@@ -1,27 +1,12 @@
 import React from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Login from "./NavMenu/Login";
 import styled from "styled-components";
 import SideBar from "./Main/SideBar";
-import Journal from "./Daily/Journal";
-import Quotes from "./Daily/Quotes";
 
-import TodoList from "./Main/TodoList";
-import OverallMood from "./Daily/OverallMood";
 const Home = () => {
   return (
     <Main>
-      {/* <Main> */}
       <SideBar />
-      {/* <TodoList /> */}
-      {/* </Main> */}
-      {/* <HomeFooter> */}
-      <Quotes />
-      <Journal />
-      <OverallMood />
-
-      {/* </HomeFooter> */}
-      {/* // </HomeWrapper> */}
     </Main>
   );
 };

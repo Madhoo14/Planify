@@ -49,6 +49,18 @@ const getDailySpread = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   const db = client.db("planify");
   const _id = req.params.dateId;
+  const emptySpread = {
+    _id: _id,
+    todo: [],
+    journal: " ",
+    quote: {
+      text: "",
+      author: "",
+    },
+    overallMood: "",
+    gratitude: "",
+    weather: { city: "", Min: "", Max: "", description: "" },
+  };
   try {
     await client.connect();
     const dailySpreadByDateId = await db
@@ -60,19 +72,8 @@ const getDailySpread = async (req, res) => {
     } else {
       const createNewDailySpread = await db
         .collection("daily-spread")
-        .insertOne({
-          _id: _id,
-          todo: [],
-          journal: " ",
-          quote: {
-            text: "",
-            author: "",
-          },
-          overallMood: "",
-          gratitude: "",
-          weather: { city: "", Min: "", Max: "", description: "" },
-        });
-      res.status(200).json({ status: 200, data: createNewDailySpread });
+        .insertOne(emptySpread);
+      res.status(200).json({ status: 200, data: emptySpread });
       console.log(res.data);
     }
   } catch (err) {
@@ -107,4 +108,63 @@ const postDailySpread = async (req, res) => {
     client.close();
   }
 };
-module.exports = { createDailySpread, getDailySpread, postDailySpread };
+
+const postAnnualGoals = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+  // const _id = req.body._id;
+  // const annualGoals = req.body;
+  console.log(req.body);
+  try {
+    await client.connect();
+    const createAnnualGoals = await db
+      .collection("annual-goals")
+      .insertOne(req.body);
+    res.status(200).json({ status: 200, data: createAnnualGoals });
+    console.log(res.data);
+  } catch (err) {
+    res.status(500).json({ status: 500, error: err.message });
+    console.log(err.message);
+  } finally {
+    client.close();
+  }
+};
+
+const getAnnualGoals = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+
+  const _id = req.params.year;
+  console.log(_id);
+  const emptyGoals = {
+    _id: _id,
+    goals: [],
+    notes: "",
+  };
+  try {
+    await client.connect();
+    const annualGoals = await db
+      .collection("annual-goals")
+      .findOne({ _id: _id });
+
+    if (annualGoals) {
+      res.status(200).json({ status: 200, data: annualGoals });
+    } else {
+      const newEmptyGoals = await db
+        .collection("annual-goals")
+        .insertOne(emptyGoals);
+      res.status(200).json({ status: 200, data: emptyGoals });
+    }
+  } catch (err) {
+    res.status(500).json({ status: 500, error: err.message });
+  } finally {
+    client.close();
+  }
+};
+module.exports = {
+  createDailySpread,
+  getDailySpread,
+  postDailySpread,
+  postAnnualGoals,
+  getAnnualGoals,
+};

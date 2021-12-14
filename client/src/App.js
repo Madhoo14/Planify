@@ -19,8 +19,9 @@ const App = () => {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
+          {/* <Route path="/annualspread" element={<AnnualSpread />}></Route> */}
           <Route path="/annualspread" element={<AnnualSpread />}></Route>
-          <Route path="/annualgoals" element={<AnnualGoals />}></Route>
+          <Route path="/annualgoals/:year" element={<AnnualGoals />}></Route>
           <Route path="/monthlyspread" element={<MonthlySpread />}></Route>
           <Route path="/dailyspread/:dateId" element={<DailySpread />}></Route>
           <Route path="/errorpage" element={<ErrorPage />}></Route>

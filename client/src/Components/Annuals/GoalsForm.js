@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 function GoalsForm({ edit, onSubmit }) {
   const [input, setInput] = useState(edit ? edit.value : "");
-  const inputRef = useRef(null);
+  // const inputRef = useRef(null);
 
-  useEffect(() => {
-    inputRef.current.focus();
-  });
+  // useEffect(() => {
+  //   inputRef.current.focus();
+  // });
 
   const handleInputChange = (ev) => {
     setInput(ev.target.value);
@@ -32,7 +32,7 @@ function GoalsForm({ edit, onSubmit }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            ref={inputRef}
+            // ref={inputRef}
           />
           <TodoButton>Update goal</TodoButton>
         </>
@@ -44,7 +44,7 @@ function GoalsForm({ edit, onSubmit }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            ref={inputRef}
+            // ref={inputRef}
           />
           <TodoButton>Add Goal</TodoButton>
         </>

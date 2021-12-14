@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styled from "styled-components";
-
+import App from "../../App";
 import Calendar from "rc-year-calendar";
 import Header from "../Header";
 import Footer from "../Footer";
@@ -14,21 +14,21 @@ const moment = require("moment");
 const AnnualSpread = () => {
   const [dateId, setDateId] = useState(null);
   const navigate = useNavigate();
-  // const [momentDate, setMomentDate] = useState(null);
 
   const clicker = (date, event) => {
-    // a fetch will go here to fetch the annual page corresponding to that date. If a mongodb entry exists it will bring on that page if not it will
-    //bring up an empty page for daily spread
+    //  to fetch the annual page corresponding to that date. If a mongodb entry exists it will bring on that page if not it will
+    // create and render an empty page for daily spread
 
     console.log(date.date);
     let temp = moment(date.date).format("DDMMMYYYY");
     setDateId(temp);
-    console.log(temp);
+
     fetch(`/dailyspread/${temp}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.status !== 200) {
-          navigate("/errorpage");
+          console.log("this isnt working");
+          // navigate("/errorpage");
         } else {
           navigate(`/dailyspread/${temp}`);
           console.log(data);
@@ -46,8 +46,8 @@ const AnnualSpread = () => {
           />
         </CalendarPart>
         <SideBar />
+        {/* <App dateId={dateId} /> */}
       </CalendarContainer>
-      {/* <MoodTracker /> */}
     </>
   );
 };
@@ -60,6 +60,7 @@ const CalendarContainer = styled.div`
   margin: auto;
   padding: 50px;
   display: flex;
+  font-weight: bold;
   flex-grow: 1;
   justify-content: space-between;
   /* flex-direction: column; */
