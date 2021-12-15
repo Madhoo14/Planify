@@ -80,24 +80,25 @@ const Button = styled.button`
   border: none;
   height: 64px;
   width: 64px;
-  font-size: 40px;
+  font-size: 32px;
   cursor: pointer;
   /* margin: 5px; */
   padding: 5px;
   align-items: center;
-  color: var(--graceful-grey);
+  color: var(--coffee-brown);
 `;
 const Wrapper = styled.div`
   font-family: "Happy Monkey";
   font-size: 25px;
-  color: #463f3a;
+  color: var(--coffee-brown);
   display: flex;
-  /* flex-direction: column; */
+  margin: 5px 0;
   justify-content: space-between;
   border: solid 1px #bcb8b1;
   width: 470px;
   height: 60px;
   border-radius: 5px;
-  background-color: #f4f3ee;
+  /* background-color: rgb(70, 63, 58, 0.2); */
+  background-color: var(--bckgrnd-clr);
 `;
 export default Goals;

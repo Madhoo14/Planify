@@ -7,6 +7,7 @@ import GoalQuotes from "./GoalQuotes";
 import GoalSetting from "./GoalSetting";
 import GoalNotes from "./GoalNotes";
 import PickYear from "./PickYear";
+import { Mid } from "../Monthly/MonthlySpread";
 const moment = require("moment");
 const AnnualGoals = () => {
   const [goals, setGoals] = useState([]);
@@ -107,14 +108,17 @@ const AnnualGoals = () => {
 
   return (
     <Container>
-      <Button onClick={handleGoalSubmit}>Save goals by clicking here</Button>
-      <PickYear
-        goalYear={goalYear}
-        years={years}
-        setGoalYear={setGoalYear}
-        handleYearChange={handleYearChange}
-      />
       <TopContent>
+        <PickYear
+          goalYear={goalYear}
+          years={years}
+          setGoalYear={setGoalYear}
+          handleYearChange={handleYearChange}
+        />
+        <Button onClick={handleGoalSubmit}>Save goals by clicking here</Button>
+        <GoalYear>You are viewing {goalYear}'s goals</GoalYear>
+      </TopContent>
+      <Mid>
         <GoalsList
           goals={goals}
           setGoals={setGoals}
@@ -125,7 +129,7 @@ const AnnualGoals = () => {
         />
         <GoalSetting />
         <SideBar />
-      </TopContent>
+      </Mid>
       <BottomContent>
         <GoalNotes
           notes={notes}
@@ -138,7 +142,6 @@ const AnnualGoals = () => {
   );
 };
 const Container = styled.div`
-  /* background-color: var(--almost-white); */
   width: 100%;
   min-height: calc(100vh -200px);
   margin-left: auto;
@@ -147,22 +150,35 @@ const Container = styled.div`
 const TopContent = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  border: solid orange;
+`;
+const GoalYear = styled.div`
+  height: 80px;
+  width: 20%;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 20px;
+  background-color: var(--light-brown);
+  font-size: 25px;
+  color: var(--almost-white);
+  font-weight: bold;
 `;
 
+const Button = styled.button`
+  height: 80px;
+  width: 20%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: var(--light-brown);
+  font-size: 25px;
+  color: var(--almost-white);
+  font-weight: bold;
+  cursor: pointer;
+`;
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-const Button = styled.button`
-  height: 80px;
-  width: 50%;
-  margin: auto;
-
-  border-radius: 20px;
-  background-color: var(--coffee-brown);
-  font-size: 32px;
-  color: var(--graceful-grey);
-  font-weight: bold;
-  cursor: pointer;
+  margin-top: 15px;
 `;
 export default AnnualGoals;

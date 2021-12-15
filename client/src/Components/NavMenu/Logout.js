@@ -22,6 +22,9 @@ const Button = styled.button`
   margin: 15px;
   cursor: pointer;
   background: rgba(188, 184, 177, 0.3);
+  &:hover {
+    color: #ef476f;
+  }
 `;
 
 export default Logout;

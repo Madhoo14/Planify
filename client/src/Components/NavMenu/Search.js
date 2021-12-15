@@ -61,6 +61,9 @@ const ButtonSearch = styled.button`
   border-radius: 10px 0px 0px 10px;
   margin: 15px 0;
   padding: 1px 2px;
+  &:hover {
+    color: #ef476f;
+  }
 `;
 const ButtonClear = styled.button`
   height: 80px;
@@ -83,6 +86,9 @@ const ButtonClear = styled.button`
   align-items: center;
   margin: 15px 0;
   padding: 1px 2px;
+  &:hover {
+    color: #ef476f;
+  }
 `;
 const Input = styled.input`
   height: 80px;

@@ -79,7 +79,7 @@ const TodoButton = styled.button`
   color: var(--coffee-brown);
   font-weight: bold;
   font-family: "Happy Monkey";
-  background-color: rgb(70, 63, 58, 0.2);
+  background-color: var(--bckgrnd-clr);
   border: solid 1px var(--almost-white);
 `;
 const TodoInput = styled.input`
@@ -94,6 +94,6 @@ const TodoInput = styled.input`
   margin-right: 10px;
   outline: none;
   color: #463f3a;
-  background-color: rgb(70, 63, 58, 0.2);
+  background-color: var(--bckgrnd-clr);
 `;
 export default TodoForm;

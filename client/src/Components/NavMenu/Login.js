@@ -29,5 +29,8 @@ const Button = styled.button`
   margin: 15px;
   background: rgba(188, 184, 177, 0.3);
   cursor: pointer;
+  &:hover {
+    color: #ef476f;
+  }
 `;
 export default Login;

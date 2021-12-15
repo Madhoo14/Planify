@@ -18,7 +18,7 @@ const NavigationMenu = styled(NavLink)`
   font-family: "Happy Monkey";
   font-weight: bold;
   &:hover {
-    color: #e0afa0;
+    color: #ef476f;
   }
 `;
 const Wrapper = styled.div`

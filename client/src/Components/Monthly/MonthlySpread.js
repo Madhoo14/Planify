@@ -16,7 +16,7 @@ const MonthlySpread = () => {
 
   const [date, setDate] = useState(null);
   const [goals, setGoals] = useState([]);
-  const [monthlyGoal, setMonthlyGoal] = useState({});
+  // const [monthlyGoal, setMonthlyGoal] = useState({});
   const navigate = useNavigate();
 
   const handleClick = (e) => {
@@ -25,12 +25,17 @@ const MonthlySpread = () => {
     console.log(temporary);
   };
   const month = document.querySelector(".fc-toolbar-title");
+
   useEffect(() => {
-    month?.addEventListener("click", handleClick);
+    if (month) {
+      month.addEventListener("click", handleClick);
+    }
     return () => {
-      month?.removeEventListener("click", handleClick);
+      if (month) {
+        month.removeEventListener("click", handleClick);
+      }
     };
-  }, []);
+  }, [month]);
 
   const addGoals = (goal) => {
     if (!goal.text || /^\s*$/.test(goal.text)) {
@@ -81,9 +86,11 @@ const MonthlySpread = () => {
     fetch(`/api/monthlygoals/${goalMonth}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setGoals(data.data.goals);
+        setNotes(data.data.notes);
+        console.log(data.data);
       });
-  }, [goalMonth]);
+  }, []);
 
   const handleGoalSubmit = () => {
     console.log(goalMonth);
@@ -101,7 +108,6 @@ const MonthlySpread = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.status !== 200) {
           return <h1>Please try saving the page again</h1>;
         } else {
@@ -109,10 +115,11 @@ const MonthlySpread = () => {
         }
       });
   };
+
   return (
     <Wrapper>
       <Top>
-        <DateDiv></DateDiv>
+        <DateDiv>{goalMonth}'s goals</DateDiv>
         <Button onClick={handleGoalSubmit}>Save goals by clicking here</Button>
         <SideBar />
       </Top>
@@ -125,12 +132,16 @@ const MonthlySpread = () => {
           updateGoals={updateGoals}
           completeGoals={completeGoals}
         />
-        <p>Please click on the month in the calendar to start setting goals</p>
-        <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          initialView="dayGridMonth"
-          dateClick={(e) => handleDateClick(e)}
-        />
+        <Calendar>
+          <Para>
+            Please click on the month in the calendar to start setting goals
+          </Para>
+          <FullCalendar
+            plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+            initialView="dayGridMonth"
+            dateClick={(e) => handleDateClick(e)}
+          />
+        </Calendar>
       </Mid>
       <Bottom>
         <GoalNotes
@@ -148,44 +159,60 @@ const Wrapper = styled.div`
   width: 500px;
   margin: 20px;
   font-size: 20px;
-  /* background-color: var(--background-transparent); */
 `;
 const Button = styled.button`
   height: 80px;
   width: 30%;
   /* margin: auto; */
   border-radius: 20px;
-  background-color: var(--coffee-brown);
+  background-color: rgb(70, 63, 58, 0.2);
   font-size: 32px;
-  color: var(--graceful-grey);
+  color: var(--coffee-brown);
   font-weight: bold;
   cursor: pointer;
 `;
 const DateDiv = styled.div`
   height: 80px;
   width: 20%;
-
   border-radius: 10px;
-  border: solid var(--coffee-brown);
-  background-color: var(--coffee-brown);
-  color: var(--graceful-grey);
+  /* border: solid var(--coffee-brown); */
+  background-color: rgb(70, 63, 58, 0.2);
+  color: var(--coffee-brown);
   font-weight: bold;
   font-size: 32px;
   text-align: center;
+  padding: 1px 6px;
 `;
 const Top = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 50px;
 `;
-const Mid = styled.div`
+export const Mid = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-around;
+  border: solid greenyellow;
+  /* background-color: rgb(70, 63, 58, 0.2); */
+  /* margin: 10px 0; */
 `;
 const Bottom = styled.div`
   width: fit-content;
   display: flex;
   justify-content: space-between;
+  color: var(--coffee-brown);
+`;
+const Para = styled.p`
+  font-size: 32px;
+  color: var(--coffee-brown);
+  background-color: rgb(138, 129, 124, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+`;
+const Calendar = styled.div`
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
 `;
 export default MonthlySpread;

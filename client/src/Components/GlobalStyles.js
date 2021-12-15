@@ -12,6 +12,7 @@ export default createGlobalStyle`
       --skin:#E0AFA0;
       --max-content-width: 1200px;
       --background-transparent: rgb(188, 184, 177,0.3);
+      --bckgrnd-clr:rgb(183, 183, 164, 0.4);
       --font-family: 'Happy Monkey', cursive;
     }
 *{

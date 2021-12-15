@@ -12,7 +12,6 @@ import styled from "styled-components";
 import ErrorPage from "./Components/ErrorPage";
 const App = () => {
   return (
-    // <p> This is my project</p>
     <BrowserRouter>
       <GlobalStyles />
       <AppWrapper>
@@ -22,7 +21,10 @@ const App = () => {
           {/* <Route path="/annualspread" element={<AnnualSpread />}></Route> */}
           <Route path="/annualspread" element={<AnnualSpread />}></Route>
           <Route path="/annualgoals/:year" element={<AnnualGoals />}></Route>
-          <Route path="/monthlyspread" element={<MonthlySpread />}></Route>
+          <Route
+            path="/monthlyspread/:month"
+            element={<MonthlySpread />}
+          ></Route>
           <Route path="/dailyspread/:dateId" element={<DailySpread />}></Route>
           <Route path="/errorpage" element={<ErrorPage />}></Route>
         </Routes>

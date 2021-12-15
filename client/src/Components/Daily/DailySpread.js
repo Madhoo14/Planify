@@ -9,49 +9,11 @@ import OverallMood from "./OverallMood";
 import Quotes from "./Quotes";
 import Gratitude from "./Gratitude";
 import Weather from "./Weather";
-import { PlanifyContext } from "../PlanifyContext";
-// import { WatchLater } from "@material-ui/icons";
 
 function DailySpread() {
   const navigate = useNavigate();
   const [dailyEntry, setDailyEntry] = useState(null);
-  // const {
-  //   quote,
-  //   setQuote,
-  //   entry,
-  //   setEntry,
-  //   handleEntry,
-  //   input,
-  //   setInput,
-  //   handleInputChange,
-  //   handleSubmit,
-  //   edit,
-  //   setEdit,
-  //   submitUpdate,
-  //   todos,
-  //   setTodos,
-  //   addTodo,
-  //   removeTodo,
-  //   updateTodo,
-  //   completeTodo,
-  //   gratitude,
-  //   setGratitude,
-  //   handleGratitude,
-  //   mood,
-  //   setMood,
-  //   labels,
-  //   handleGreat,
-  //   handleSad,
-  //   handleUnwell,
-  //   handleNeutral,
-  //   handleSatisfied,
-  //   handleFrustrated,
-  //   handleBored,
-  //   handleAngry,
-  //   handleProductive,
-  //   weather,
-  //   setWeather,
-  // } = useContext(PlanifyContext);
+
   //lifting the states to be able to use here for posting onSubmit
   //journal
   const [entry, setEntry] = useState(null);
@@ -106,8 +68,6 @@ function DailySpread() {
           min: data.main.temp_min,
           description: data.weather[0].description,
         });
-        console.log(data);
-        // setWeather(data);
       });
   };
 
@@ -215,10 +175,10 @@ function DailySpread() {
     <Main>
       <TopPage>
         <DateDiv>{dailyEntry?._id}</DateDiv>
-        <Weather weather={weather} setWeather={setWeather} />
         <Button onClick={handleEntrySubmit} type="submit">
           Save your entry for today
         </Button>
+        <Weather weather={weather} setWeather={setWeather} />
       </TopPage>
       <MidPage>
         <TodoList
@@ -240,17 +200,19 @@ function DailySpread() {
         <SideBar style={{ flexGrow: "1" }} />
       </MidPage>
       <BottomPage>
-        <OverallMood
-          mood={mood}
-          setMood={setMood}
-          handleClickedElement={handleClickedElement}
-          labels={labels}
-        />
-        <Gratitude
-          gratitude={gratitude}
-          setGratitude={setGratitude}
-          handleGratitude={handleGratitude}
-        />
+        <Section>
+          <OverallMood
+            mood={mood}
+            setMood={setMood}
+            handleClickedElement={handleClickedElement}
+            labels={labels}
+          />
+          <Gratitude
+            gratitude={gratitude}
+            setGratitude={setGratitude}
+            handleGratitude={handleGratitude}
+          />
+        </Section>
         <Quotes quote={quote} setQuote={setQuote} />
       </BottomPage>
     </Main>
@@ -258,37 +220,41 @@ function DailySpread() {
 }
 
 const Main = styled.main`
-  /* width: 100vw;
-      min-height: calc(100vh - 200px); */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  flex-grow: 1;
 `;
 const BottomPage = styled.div`
   display: flex;
-  justify-content: space-between;
-  border: solid;
+  justify-content: space-evenly;
+  flex-direction: column;
+  border: solid purple;
   @media (max-width: 550px) {
     flex-direction: column;
   }
 `;
+const Section = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
 const Button = styled.button`
   height: 80px;
-  width: 50%;
-  margin: auto;
-
+  width: 20%;
+  border: solid var(--coffee-brown);
   border-radius: 20px;
-  background-color: var(--coffee-brown);
-  font-size: 32px;
-  color: var(--graceful-grey);
+  background-color: var(--light-brown);
+  font-size: 28px;
+  /* color: var(--graceful-grey); */
+  color: var(--almost-white);
   font-weight: bold;
   cursor: pointer;
 `;
 const TopPage = styled.div`
   display: flex;
+  height: 10vh;
+  width: 100%;
+  margin-top: 15px;
   flex-direction: row;
-  /* border: solid green; */
   justify-content: space-between;
 `;
 const DateDiv = styled.div`
@@ -296,16 +262,18 @@ const DateDiv = styled.div`
   width: 20%;
   border-radius: 10px;
   border: solid var(--coffee-brown);
-  background-color: var(--coffee-brown);
-  color: var(--graceful-grey);
+  background-color: var(--light-brown);
+  color: var(--almost-white);
   font-weight: bold;
-  font-size: 32px;
+  font-size: 28px;
   text-align: center;
+  padding-top: 15px;
 `;
 const MidPage = styled.div`
   display: flex;
   flex-direction: row;
-  /* border: solid maroon; */
-  justify-content: space-between;
+  width: 100%;
+  height: 45vh;
+  justify-content: space-around;
 `;
 export default DailySpread;

@@ -16,8 +16,8 @@ function Gratitude({ gratitude, setGratitude, handleGratitude }) {
         <TextArea
           id="gratitude"
           name="gratitude"
-          rows="4"
-          columns="32000"
+          // rows="4"
+          // columns="32000"
           placeholder="what are you grateful for today?"
           value={gratitude}
           onChange={(e) => handleGratitude(e)}
@@ -27,13 +27,13 @@ function Gratitude({ gratitude, setGratitude, handleGratitude }) {
   );
 }
 const TextArea = styled.textarea`
-  width: 75%;
-  height: 600px;
+  min-width: 45vw;
+  height: 200px;
   font-size: 32px;
   outline: none;
   margin-top: 25px;
   border: solid 2px var(--graceful-grey);
-  background-color: rgb(70, 63, 58, 0.2);
+  background-color: var(--bckgrnd-clr);
   border-radius: 10px;
 `;
 const GratitudeWrapper = styled.div`

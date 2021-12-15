@@ -106,7 +106,7 @@ const Wrapper = styled.div`
   width: 470px;
   height: 60px;
   border-radius: 5px;
-  background-color: #f4f3ee;
+  background-color: var(--bckgrnd-clr);
 `;
 const Button = styled.button`
   background: none;
@@ -118,6 +118,6 @@ const Button = styled.button`
   /* margin: 5px; */
   padding: 5px;
   align-items: center;
-  color: var(--graceful-grey);
+  color: var(--coffee-brown);
 `;
 export default Todo;

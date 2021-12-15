@@ -84,96 +84,98 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
     <div>
       <EmojiContainer>
         <Heading>Overall mood for the day</Heading>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="great"
-          title="great"
-          role="img"
-          name="great"
-          style={{ opacity: mood === labels[0] ? "1" : "0.5" }}
-        >
-          😁
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="sad"
-          title="not so good"
-          role="img"
-          name="sad"
-          style={{ opacity: mood === labels[1] ? "1" : "0.5" }}
-        >
-          🙁
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="unwell"
-          title="unwell"
-          role="img"
-          name="unwell"
-          style={{ opacity: mood === labels[2] ? "1" : "0.5" }}
-        >
-          🤕
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="neutral"
-          title="neutral"
-          role="img"
-          name="neutral"
-          style={{ opacity: mood === labels[3] ? "1" : "0.5" }}
-        >
-          😐
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="satisfied"
-          title="pleased"
-          role="img"
-          name="satisfied"
-          style={{ opacity: mood === labels[4] ? "1" : "0.5" }}
-        >
-          😌
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="frustrated"
-          title="frustrated"
-          role="img"
-          name="frustrated"
-          style={{ opacity: mood === labels[5] ? "1" : "0.5" }}
-        >
-          😩
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="bored face"
-          title="meh"
-          role="img"
-          name="bored"
-          style={{ opacity: mood === labels[6] ? "1" : "0.5" }}
-        >
-          😶
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="angry red face"
-          title="mad"
-          name="angry"
-          role="img"
-          style={{ opacity: mood === labels[7] ? "1" : "0.5" }}
-        >
-          😡
-        </Button>
-        <Button
-          onClick={(e) => handleClickedElement(e)}
-          aria-label="productive cool face with sun glasses"
-          title="productive"
-          role="img"
-          name="productive"
-          style={{ opacity: mood === labels[8] ? "1" : "0.5" }}
-        >
-          😎
-        </Button>
+        <Emojis>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="great"
+            title="great"
+            role="img"
+            name="great"
+            style={{ opacity: mood === labels[0] ? "1" : "0.6" }}
+          >
+            😁
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="sad"
+            title="not so good"
+            role="img"
+            name="sad"
+            style={{ opacity: mood === labels[1] ? "1" : "0.6" }}
+          >
+            🙁
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="unwell"
+            title="unwell"
+            role="img"
+            name="unwell"
+            style={{ opacity: mood === labels[2] ? "1" : "0.6" }}
+          >
+            🤕
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="neutral"
+            title="neutral"
+            role="img"
+            name="neutral"
+            style={{ opacity: mood === labels[3] ? "1" : "0.6" }}
+          >
+            😐
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="satisfied"
+            title="pleased"
+            role="img"
+            name="satisfied"
+            style={{ opacity: mood === labels[4] ? "1" : "0.6" }}
+          >
+            😌
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="frustrated"
+            title="frustrated"
+            role="img"
+            name="frustrated"
+            style={{ opacity: mood === labels[6] ? "1" : "0.6" }}
+          >
+            😩
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="bored face"
+            title="meh"
+            role="img"
+            name="bored"
+            style={{ opacity: mood === labels[6] ? "1" : "0.6" }}
+          >
+            😶
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="angry red face"
+            title="mad"
+            name="angry"
+            role="img"
+            style={{ opacity: mood === labels[7] ? "1" : "0.6" }}
+          >
+            😡
+          </Button>
+          <Button
+            onClick={(e) => handleClickedElement(e)}
+            aria-label="productive cool face with sun glasses"
+            title="productive"
+            role="img"
+            name="productive"
+            style={{ opacity: mood === labels[8] ? "1" : "0.6" }}
+          >
+            😎
+          </Button>
+        </Emojis>
       </EmojiContainer>
     </div>
   );
@@ -184,9 +186,11 @@ const EmojiContainer = styled.div`
   width: 45vw;
   height: 200px;
   border-radius: 10px;
-  background-color: rgb(70, 63, 58, 0.2);
-  margin-top: 100px;
+  background-color: var(--bckgrnd-clr);
+  margin-top: 25px;
   margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
 `;
 
 const Button = styled.button`
@@ -205,5 +209,9 @@ const Heading = styled.div`
   font-size: 36px;
   text-align: center;
   color: var(--coffee-brown);
+`;
+const Emojis = styled.div`
+  display: flex;
+  /* flex-wrap: wrap; */
 `;
 export default Emoji;

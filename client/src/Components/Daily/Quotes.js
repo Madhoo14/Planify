@@ -31,6 +31,7 @@ function Quotes({ quote, setQuote }) {
 }
 const DailyQuote = styled.div`
   font-size: 32px;
+  /* background-color: var(--bckgrnd-clr); */
 `;
 const Author = styled.div`
   font-size: 32px;
@@ -42,8 +43,8 @@ const QuoteContainer = styled.div`
   width: 45vw;
   margin: auto;
   border-radius: 12px;
-  background-color: rgb(70, 63, 58, 0.2);
-  margin-top: 100px;
+  background-color: var(--bckgrnd-clr);
+  margin-top: 25px;
   margin-bottom: 25px;
   color: var(--coffee-brown);
 `;

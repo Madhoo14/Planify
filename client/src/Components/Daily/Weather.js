@@ -40,9 +40,10 @@ const Container = styled.div`
   height: 80px;
   width: 20%;
   padding-left: 10px;
+  margin: 0 10px;
   border: solid var(--coffee-brown);
-  background-color: var(--coffee-brown);
-  color: var(--graceful-grey);
+  background-color: var(--light-brown);
+  color: var(--almost-white);
   border-radius: 10px;
 `;
 export default Weather;

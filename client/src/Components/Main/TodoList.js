@@ -68,6 +68,6 @@ const Head1 = styled.h1`
   font-size: 24px;
 `;
 const Container = styled.div`
-  width: 40%;
+  /* width: 40%; */
 `;
 export default TodoList;

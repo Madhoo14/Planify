@@ -46,7 +46,8 @@ const GoalSettingContainer = styled.div`
   width: 50%;
   height: 800px;
   margin-top: 50px;
-  background-color: rgb(70, 63, 58, 0.2);
+  /* background-color: rgb(70, 63, 58, 0.2); */
+  background-color: rgb(183, 183, 164, 0.4);
   border-radius: 10px;
   flex-grow: 0.5;
   align-items: center;

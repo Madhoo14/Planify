@@ -45,27 +45,33 @@ const AnnualSpread = () => {
             onDayClick={(date, event) => clicker(date, event)}
           />
         </CalendarPart>
-        <SideBar />
-        {/* <App dateId={dateId} /> */}
+        <SidebarPart>
+          <SideBar />
+        </SidebarPart>
       </CalendarContainer>
     </>
   );
 };
 const CalendarContainer = styled.div`
   min-height: 800px;
-  width: 70%;
+  /* width: 70%; */
   margin-top: 100px;
   /* background-color: rgba(224, 175, 160, 0.2); */
   color: var(--coffee-brown);
-  margin: auto;
+  /* margin: auto; */
   padding: 50px;
   display: flex;
   font-weight: bold;
-  flex-grow: 1;
+  /* flex-grow: 1; */
   justify-content: space-between;
   /* flex-direction: column; */
 `;
 const CalendarPart = styled.div`
-  margin-top: 100px;
+  margin-top: 10px;
+  margin-left: 100px;
+  width: 80%;
+`;
+const SidebarPart = styled.div`
+  width: 18%;
 `;
 export default AnnualSpread;

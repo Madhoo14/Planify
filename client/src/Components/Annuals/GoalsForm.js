@@ -57,24 +57,25 @@ const Form = styled.form`
   font-family: "Happy Monkey";
   font-size: 25px;
   font-weight: bold;
-  margin-bottom: 32px;
+  margin-bottom: 10px;
   display: flex;
 `;
 const TodoButton = styled.button`
-  border-radius: 5px;
+  border-radius: 10px;
   box-sizing: content-box;
   height: 50px;
-  width: 150px;
+  width: 159px;
   padding: 0%;
   font-size: 25px;
   color: var(--coffee-brown);
   font-weight: bold;
   font-family: "Happy Monkey";
-  background-color: rgb(70, 63, 58, 0.2);
+
+  background-color: var(--bckgrnd-clr);
   border: solid 1px var(--almost-white);
 `;
 const TodoInput = styled.input`
-  border-radius: 5px;
+  border-radius: 10px;
   height: 52.67px;
   padding: 0%;
   width: 300px;
@@ -85,6 +86,7 @@ const TodoInput = styled.input`
   margin-right: 10px;
   outline: none;
   color: #463f3a;
-  background-color: rgb(70, 63, 58, 0.2);
+  /* background-color: rgb(70, 63, 58, 0.2); */
+  background-color: var(--bckgrnd-clr);
 `;
 export default GoalsForm;
