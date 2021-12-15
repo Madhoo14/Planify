@@ -1,10 +1,14 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000/",
   "private": true,
+  "proxy": "http://localhost:8000/",
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
+    "@fullcalendar/daygrid": "^5.10.1",
+    "@fullcalendar/interaction": "^5.10.1",
+    "@fullcalendar/react": "^5.10.1",
+    "@fullcalendar/timegrid": "^5.10.1",
     "@syncfusion/ej2-react-calendars": "^19.3.56",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,6 +19,7 @@
     "rc-year-calendar": "^1.0.2",
     "react": "^17.0.2",
     "react-calendar": "^3.5.0",
+    "react-calendar-month-view": "^0.7.0",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-router-dom": "^6.0.2",

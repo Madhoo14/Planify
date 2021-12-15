@@ -161,10 +161,65 @@ const getAnnualGoals = async (req, res) => {
     client.close();
   }
 };
+
+const postMonthlyGoals = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+  // const _id = req.body._id;
+
+  console.log(req.body);
+  try {
+    await client.connect();
+    const createMonthlyGoals = await db
+      .collection("monthly-goals")
+      .insertOne(req.body);
+    res.status(200).json({ status: 200, data: createMonthlyGoals });
+    console.log(res.data);
+  } catch (err) {
+    res.status(500).json({ status: 500, error: err.message });
+    console.log(err.message);
+  } finally {
+    client.close();
+  }
+};
+const getMonthlyGoals = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+
+  const _id = req.params.month;
+  console.log(_id);
+  const emptyGoals = {
+    _id: _id,
+    goals: [],
+    notes: "",
+  };
+  try {
+    await client.connect();
+    const monthlyGoals = await db
+      .collection("monthly-goals")
+      .findOne({ _id: _id });
+
+    if (monthlyGoals) {
+      res.status(200).json({ status: 200, data: monthlyGoals });
+    } else {
+      const newEmptyGoals = await db
+        .collection("monthly-goals")
+        .insertOne(emptyGoals);
+      res.status(200).json({ status: 200, data: emptyGoals });
+    }
+  } catch (err) {
+    res.status(500).json({ status: 500, error: err.message });
+  } finally {
+    client.close();
+  }
+};
+
 module.exports = {
   createDailySpread,
   getDailySpread,
   postDailySpread,
   postAnnualGoals,
   getAnnualGoals,
+  getMonthlyGoals,
+  postMonthlyGoals,
 };

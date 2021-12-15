@@ -10,7 +10,7 @@ import Quotes from "./Quotes";
 import Gratitude from "./Gratitude";
 import Weather from "./Weather";
 import { PlanifyContext } from "../PlanifyContext";
-import { WatchLater } from "@material-ui/icons";
+// import { WatchLater } from "@material-ui/icons";
 
 function DailySpread() {
   const navigate = useNavigate();
@@ -293,7 +293,7 @@ const TopPage = styled.div`
 `;
 const DateDiv = styled.div`
   height: 80px;
-  width: 25%;
+  width: 20%;
   border-radius: 10px;
   border: solid var(--coffee-brown);
   background-color: var(--coffee-brown);

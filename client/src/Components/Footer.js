@@ -5,7 +5,8 @@ const Footer = () => {
     <Wrapper>
       <Logo>Planify</Logo>
       <QuoteSpace>
-        A goal without a plan is just a wish{" "}
+        A goal without a plan is just a wish! / Tout objectif sans plan n'est
+        qu'un souhait!
         <Span>- Antoine de Saint-Exupéry</Span>
       </QuoteSpace>
     </Wrapper>

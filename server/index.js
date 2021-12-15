@@ -9,6 +9,8 @@ const {
   postDailySpread,
   postAnnualGoals,
   getAnnualGoals,
+  postMonthlyGoals,
+  getMonthlyGoals,
 } = require("./handlers");
 const PORT = 8000;
 
@@ -51,6 +53,10 @@ app.post("/api/postdailyspread", postDailySpread);
 app.post("/api/postannualgoals/:year", postAnnualGoals);
 
 app.get("/api/annualgoals/:year", getAnnualGoals);
+
+app.post("/api/monthlygoals/:month", postMonthlyGoals);
+
+app.get("/api/monthlygoals/:month", getMonthlyGoals);
 // end point for when a
 
 app.listen(PORT, () => console.info(`Listening on port ${PORT}`));

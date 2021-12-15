@@ -21,15 +21,28 @@ function Weather({ weather, setWeather }) {
   // }, []);
   // const { weather, setWeather } = useContext(PlanifyContext);
   return (
-    <div>
+    <Container>
       <div>City: {weather?.city}</div>
       <div>
-        <span>Min: {weather?.min} °C </span>
-        <span>Max: {weather?.max} °C</span>
+        <span>
+          <strong>Min:</strong> {weather?.min} °C{" "}
+        </span>
+        <span>
+          <strong>Max:</strong> {weather?.max} °C
+        </span>
         <div>{weather?.description}</div>
       </div>
-    </div>
+    </Container>
   );
 }
-
+const Container = styled.div`
+  font-size: 20px;
+  height: 80px;
+  width: 20%;
+  padding-left: 10px;
+  border: solid var(--coffee-brown);
+  background-color: var(--coffee-brown);
+  color: var(--graceful-grey);
+  border-radius: 10px;
+`;
 export default Weather;

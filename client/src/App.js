@@ -4,7 +4,7 @@ import AnnualSpread from "./Components/Annuals/AnnualSpread";
 import Home from "./Components/Home";
 import GlobalStyles from "./Components/GlobalStyles";
 import AnnualGoals from "./Components/Annuals/AnnualGoals";
-import MonthlySpread from "./Components/MonthlySpread";
+import MonthlySpread from "./Components/Monthly/MonthlySpread";
 import DailySpread from "./Components/Daily/DailySpread";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
