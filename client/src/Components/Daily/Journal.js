@@ -1,14 +1,7 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-import { PlanifyContext } from "../PlanifyContext";
 
 function Journal({ entry, setEntry, handleEntry }) {
-  // const { entry, setEntry, handleEntry } = useContext(PlanifyContext);
-  // const [entry, setEntry] = useState(journal);
-  // const handleEntry = (e) => {
-  //   setEntry(e.target.value);
-  // };
-
   return (
     <JournalWrapper>
       <Form>
@@ -28,7 +21,9 @@ function Journal({ entry, setEntry, handleEntry }) {
     </JournalWrapper>
   );
 }
+
 const Form = styled.form``;
+
 const Label = styled.label`
   font-size: 25px;
   color: var(--coffee-brown);
@@ -36,23 +31,25 @@ const Label = styled.label`
   height: 50.67px;
   border-radius: 10px;
 `;
+
 const JournalSection = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const TextArea = styled.textarea`
   width: 800px;
   height: 400px;
   font-size: 32px;
   outline: none;
-  /* margin-top: 25px; */
   border: solid 2px var(--graceful-grey);
   background-color: var(--bckgrnd-clr);
   border-radius: 10px;
 `;
+
 const JournalWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  /* margin-right: 50px; */
 `;
+
 export default Journal;

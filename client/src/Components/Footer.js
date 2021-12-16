@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+
 const Footer = () => {
   return (
     <Wrapper>
@@ -19,12 +20,14 @@ const QuoteSpace = styled.p`
   font-size: 32px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 `;
+
 const Span = styled.span`
   font-size: 28px;
   opacity: 0.8;
   font-style: italic;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 `;
+
 const Wrapper = styled.footer`
   height: 100px;
   width: 100vw;
@@ -43,7 +46,9 @@ const Wrapper = styled.footer`
   font-size: 30px;
   margin-top: auto;
 `;
+
 const Logo = styled.div`
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 `;
+
 export default Footer;

@@ -2,6 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import { FiLogOut } from "react-icons/fi";
+
 const Logout = () => {
   const { logout, isAuthenticated } = useAuth0();
   return (
@@ -12,6 +13,7 @@ const Logout = () => {
     )
   );
 };
+
 const Button = styled.button`
   width: 100px;
   height: 80px;

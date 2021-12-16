@@ -140,6 +140,7 @@ function DailySpread() {
   useEffect(() => {
     updateData();
   }, []);
+
   const handleEntrySubmit = () => {
     // api to post to the dailyspread page with the date
     fetch("/api/postdailyspread", {
@@ -182,7 +183,6 @@ function DailySpread() {
       </TopPage>
       <MidPage>
         <TodoList
-          // style={{ flexGrow: "1" }}
           todos={todos}
           setTodos={setTodos}
           addTodo={addTodo}
@@ -191,13 +191,8 @@ function DailySpread() {
           completeTodo={completeTodo}
         />
 
-        <Journal
-          style={{ flexGrow: "2" }}
-          entry={entry}
-          setEntry={setEntry}
-          handleEntry={handleEntry}
-        />
-        <SideBar style={{ flexGrow: "1" }} />
+        <Journal entry={entry} setEntry={setEntry} handleEntry={handleEntry} />
+        <SideBar />
       </MidPage>
       <BottomPage>
         <Section>
@@ -224,6 +219,7 @@ const Main = styled.main`
   flex-direction: column;
   min-height: 100vh;
 `;
+
 const BottomPage = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -232,10 +228,12 @@ const BottomPage = styled.div`
     flex-direction: column;
   }
 `;
+
 const Section = styled.div`
   display: flex;
   justify-content: space-evenly;
 `;
+
 const Button = styled.button`
   height: 80px;
   width: 20%;
@@ -250,6 +248,7 @@ const Button = styled.button`
     color: #ef476f;
   }
 `;
+
 const TopPage = styled.div`
   display: flex;
   height: 10vh;
@@ -258,6 +257,7 @@ const TopPage = styled.div`
   flex-direction: row;
   justify-content: space-between;
 `;
+
 const DateDiv = styled.div`
   height: 80px;
   width: 20%;
@@ -270,6 +270,7 @@ const DateDiv = styled.div`
   text-align: center;
   padding-top: 15px;
 `;
+
 const MidPage = styled.div`
   display: flex;
   flex-direction: row;
@@ -277,4 +278,5 @@ const MidPage = styled.div`
   height: 45vh;
   justify-content: space-around;
 `;
+
 export default DailySpread;

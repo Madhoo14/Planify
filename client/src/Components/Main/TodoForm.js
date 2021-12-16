@@ -1,23 +1,8 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { PlanifyContext } from "../PlanifyContext";
 
 function TodoForm({ edit, submitUpdate }) {
-  // const {
-  //   input,
-  //   setInput,
-  //   handleInputChange,
-  //   handleSubmit,
-  //   edit,
-  //   setEdit,
-  //   submitUpdate,
-  // } = useContext(PlanifyContext);
   const [input, setInput] = useState(edit ? edit.value : "");
-  // const inputRef = useRef(null);
-
-  // useEffect(() => {
-  //   inputRef.current.focus();
-  // });
 
   const handleInputChange = (ev) => {
     setInput(ev.target.value);
@@ -69,6 +54,7 @@ const Form = styled.form`
   font-weight: bold;
   margin-bottom: 32px;
 `;
+
 const TodoButton = styled.button`
   border-radius: 5px;
   box-sizing: content-box;
@@ -86,6 +72,7 @@ const TodoButton = styled.button`
     color: #ef476f;
   }
 `;
+
 const TodoInput = styled.input`
   border-radius: 5px;
   height: 52.67px;
@@ -100,4 +87,5 @@ const TodoInput = styled.input`
   color: #463f3a;
   background-color: var(--bckgrnd-clr);
 `;
+
 export default TodoForm;

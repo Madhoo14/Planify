@@ -2,9 +2,7 @@ import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 import { FiUserCheck } from "react-icons/fi";
-// require("react-dom");
-// window.React2 = require("react");
-// console.log(window.React1 === window.React2);
+
 const Login = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
@@ -19,6 +17,7 @@ const Login = () => {
     )
   );
 };
+
 const Button = styled.button`
   width: 100px;
   height: 80px;
@@ -33,4 +32,5 @@ const Button = styled.button`
     color: #ef476f;
   }
 `;
+
 export default Login;

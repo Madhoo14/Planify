@@ -6,7 +6,9 @@ const GoalSetting = () => {
     <GoalSettingContainer>
       <Para>
         <Para>
-          <Header2>A quick guide to setting your personal goals</Header2>
+          <Header2>
+            <center>A quick guide to setting your personal goals</center>
+          </Header2>
           <UnorderedList>
             <List>
               First you create your "big picture" of what you want to do with
@@ -22,21 +24,23 @@ const GoalSetting = () => {
               achieve these goals.
             </List>
           </UnorderedList>
+          <br></br>
         </Para>
         SMART Goals A useful way of making goals more powerful is to use the
         SMART mnemonic. While there are plenty of variants (some of which we've
         included in parenthesis), SMART usually stands for:
-        <Para> S – Specific (or Significant).</Para>{" "}
-        <Para> M – Measurable (or Meaningful). </Para>A – Attainable (or
-        Action-Oriented). <Para>R – Relevant (or Rewarding). </Para>
-        <Para>T – Time-bound (or Trackable).</Para>
-        <Para>
+        <Para> ☑️ S – Specific (or Significant).</Para>{" "}
+        <Para> ☑️ M – Measurable (or Meaningful). </Para>
+        <Para>☑️ A – Attainable (or Action-Oriented). </Para>
+        <Para>☑️ R – Relevant (or Rewarding). </Para>
+        <Para>☑️ T – Time-bound (or Trackable).</Para>
+        <p>
           {" "}
           For example, instead of having "to sail around the world" as a goal,
           it's more powerful to use the SMART goal "To have completed my trip
           around the world by December 31, 2027." Obviously, this will only be
           attainable if a lot of preparation has been completed beforehand!
-        </Para>
+        </p>
         <Cite>https://www.mindtools.com/page6.html</Cite>
       </Para>
     </GoalSettingContainer>
@@ -46,7 +50,6 @@ const GoalSettingContainer = styled.div`
   width: 50%;
   height: 800px;
   margin-top: 50px;
-  /* background-color: rgb(70, 63, 58, 0.2); */
   background-color: rgb(183, 183, 164, 0.4);
   border-radius: 10px;
   flex-grow: 0.5;
@@ -54,21 +57,30 @@ const GoalSettingContainer = styled.div`
   text-align: left;
   color: var(--coffee-brown);
 `;
+
 const Para = styled.p`
   font-size: 30px;
+  margin-left: 24px;
 `;
-const UnorderedList = styled.ul``;
+
+const UnorderedList = styled.ul`
+  padding-left: 5px;
+`;
+
 const List = styled.li`
   color: var(--coffee-brown);
 `;
+
 const Cite = styled.cite`
   font-size: 24px;
   color: #6b705c;
   font-weight: bold;
 `;
+
 const Header2 = styled.h2`
   text-decoration-color: var(--graceful-grey);
   align-items: center;
   font-size: 36px;
 `;
+
 export default GoalSetting;

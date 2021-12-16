@@ -16,6 +16,7 @@ const SearchShow = ({ date, journalEntry }) => {
     </Container>
   );
 };
+
 const Container = styled.div`
   max-height: 600px;
   width: 50%;
@@ -25,12 +26,14 @@ const Container = styled.div`
   margin-top: 25px;
   border-radius: 15px;
 `;
+
 const Date = styled.div`
   font-size: 30px;
   color: var(--coffee-brown);
   background-color: var(--bkgrnd-clr);
   margin-bottom: 10px;
 `;
+
 const JournalEntry = styled.div`
   font-size: 32px;
   color: var(--coffee-brown);

@@ -1,13 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 function GoalsForm({ edit, onSubmit }) {
   const [input, setInput] = useState(edit ? edit.value : "");
-  // const inputRef = useRef(null);
-
-  // useEffect(() => {
-  //   inputRef.current.focus();
-  // });
 
   const handleInputChange = (ev) => {
     setInput(ev.target.value);
@@ -32,7 +27,6 @@ function GoalsForm({ edit, onSubmit }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            // ref={inputRef}
           />
           <TodoButton>Update goal</TodoButton>
         </>
@@ -44,7 +38,6 @@ function GoalsForm({ edit, onSubmit }) {
             value={input}
             name="text"
             onChange={handleInputChange}
-            // ref={inputRef}
           />
           <TodoButton>Add Goal</TodoButton>
         </>
@@ -60,6 +53,7 @@ const Form = styled.form`
   margin-bottom: 10px;
   display: flex;
 `;
+
 const TodoButton = styled.button`
   border-radius: 10px;
   box-sizing: content-box;
@@ -73,10 +67,10 @@ const TodoButton = styled.button`
   &:hover {
     color: #ef476f;
   }
-
   background-color: var(--bckgrnd-clr);
   border: solid 1px var(--almost-white);
 `;
+
 const TodoInput = styled.input`
   border-radius: 10px;
   height: 52.67px;
@@ -89,7 +83,7 @@ const TodoInput = styled.input`
   margin-right: 10px;
   outline: none;
   color: #463f3a;
-  /* background-color: rgb(70, 63, 58, 0.2); */
   background-color: var(--bckgrnd-clr);
 `;
+
 export default GoalsForm;

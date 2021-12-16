@@ -24,14 +24,13 @@ const SideBarContainer = styled.div`
   flex-direction: column;
   flex-grow: 0.05;
   font-family: "Happy Monkey";
-  /* background-color: rgb(70, 63, 58, 0.2); // this is the color */
   background-color: rgb(183, 183, 164, 0.4);
   border-radius: 10px;
   margin-top: 10px;
-  /* position: fixed; */
   top: 100px;
   right: 0;
 `;
+
 const SideBarNav = styled(Link)`
   color: var(--coffee-brown);
   margin-left: 15px;
@@ -42,4 +41,5 @@ const SideBarNav = styled(Link)`
     color: #ef476f;
   }
 `;
+
 export default SideBar;

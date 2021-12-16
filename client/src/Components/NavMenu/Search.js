@@ -9,11 +9,10 @@ import styled from "styled-components";
 const Search = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchResult, setSearchResult] = useState(null);
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
-  // console.log for now. need and end point and a fetch later for it
+
   const handleKeyDown = (eve) => {
     if (eve.key === "Enter") {
       navigate(`/searchResult/${searchTerm}`);
@@ -47,6 +46,7 @@ const Search = () => {
     </SearchWrapper>
   );
 };
+
 const ButtonSearch = styled.button`
   height: 80px;
   width: 40px;
@@ -71,6 +71,7 @@ const ButtonSearch = styled.button`
     color: #ef476f;
   }
 `;
+
 const ButtonClear = styled.button`
   height: 80px;
   width: 40px;
@@ -96,6 +97,7 @@ const ButtonClear = styled.button`
     color: #ef476f;
   }
 `;
+
 const Input = styled.input`
   height: 80px;
   width: 380px;
@@ -113,6 +115,7 @@ const Input = styled.input`
   padding: 1px 2px;
   margin: 15px 0;
 `;
+
 const SearchWrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -121,4 +124,5 @@ const SearchWrapper = styled.div`
   padding-right: 100px;
   font-family: "Happy Monkey";
 `;
+
 export default Search;

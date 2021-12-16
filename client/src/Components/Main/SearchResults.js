@@ -20,12 +20,6 @@ const SearchResults = () => {
       });
   }, [searchTerm]);
 
-  const showResults = () => {
-    searchResults?.map((result) => {
-      //   return <SearchShow date={result._id} journalEntry={result.journal} />;
-      return <div>hello</div>;
-    });
-  };
   return searchResults
     ? searchResults.map((result) => (
         <div>
@@ -33,8 +27,6 @@ const SearchResults = () => {
         </div>
       ))
     : null;
-
-  //   return searchResults ? showResults() : null;
 };
 
 export default SearchResults;

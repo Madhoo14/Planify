@@ -14,5 +14,11 @@ const OverallMood = ({ mood, setMood, handleClickedElement, labels }) => {
     </EmojiContainer>
   );
 };
-const EmojiContainer = styled.div``;
+
+const EmojiContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export default OverallMood;

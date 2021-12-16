@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const PickYear = ({ goalYear, setGoalYear, handleYearChange, years }) => {
@@ -15,12 +15,14 @@ const PickYear = ({ goalYear, setGoalYear, handleYearChange, years }) => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.div`
   margin-bottom: 6px;
   background-color: var(--light-brown);
   border-radius: 20px;
   margin-right: 15px;
 `;
+
 const Label = styled.label`
   font-size: 25px;
   height: 40px;
@@ -40,7 +42,6 @@ const Select = styled.select`
   padding: 0 8px;
   margin-right: 10px;
   text-align: center;
-  /* padding-top: 20px; */
   outline: none;
   &:option:active {
     outline-color: var(--graceful-grey) !important;

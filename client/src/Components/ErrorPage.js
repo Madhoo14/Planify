@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import errorpage from "../assets/errorImage.jpeg";
+
 function ErrorPage() {
   return (
     <Wrapper>

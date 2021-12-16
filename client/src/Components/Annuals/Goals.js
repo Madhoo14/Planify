@@ -55,6 +55,7 @@ function Goals({ goals, completeGoals, removeGoals, updateGoals }) {
     </div>
   ));
 }
+
 const Icons = styled.div`
   display: flex;
   align-items: center;
@@ -62,11 +63,13 @@ const Icons = styled.div`
   cursor: pointer;
   margin: 5px;
 `;
+
 const Complete = styled.div`
   text-decoration: line-through;
   margin-right: 50px;
   opacity: 0.4;
 `;
+
 const Incomplete = styled.div`
   text-decoration: none;
   font-family: "Happy Monkey";
@@ -75,6 +78,7 @@ const Incomplete = styled.div`
   color: #463f3a;
   opacity: 1;
 `;
+
 const Button = styled.button`
   background: none;
   border: none;
@@ -82,7 +86,6 @@ const Button = styled.button`
   width: 64px;
   font-size: 32px;
   cursor: pointer;
-  /* margin: 5px; */
   padding: 5px;
   align-items: center;
   color: var(--coffee-brown);
@@ -90,6 +93,7 @@ const Button = styled.button`
     color: #ef476f;
   }
 `;
+
 const Wrapper = styled.div`
   font-family: "Happy Monkey";
   font-size: 25px;
@@ -101,7 +105,7 @@ const Wrapper = styled.div`
   width: 470px;
   height: 60px;
   border-radius: 5px;
-  /* background-color: rgb(70, 63, 58, 0.2); */
   background-color: var(--bckgrnd-clr);
 `;
+
 export default Goals;

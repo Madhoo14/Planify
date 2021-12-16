@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+
 const NavMenu = () => {
   return (
     <Wrapper>
@@ -10,6 +11,7 @@ const NavMenu = () => {
     </Wrapper>
   );
 };
+
 const NavigationMenu = styled(NavLink)`
   color: #616060;
   margin-left: 15px;
@@ -21,6 +23,7 @@ const NavigationMenu = styled(NavLink)`
     color: #ef476f;
   }
 `;
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: flex-start;

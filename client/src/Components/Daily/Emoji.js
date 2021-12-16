@@ -1,85 +1,7 @@
-import React, { useState, useContext } from "react";
-import { PlanifyContext } from "../PlanifyContext";
+import React from "react";
 import styled from "styled-components";
 
 function Emoji({ mood, setMood, handleClickedElement, labels }) {
-  //   const [isGreat, setIsGreat] = useState(false);
-  //   const [isSad, setIsSad] = useState(false);
-  //   const [isUnwell, setIsUnwell] = useState(false);
-  //   const [isNeutral, setIsNeutral] = useState(false);
-  //   const [isSatisfied, setIsSatisfied] = useState(false);
-  //   const [isFrustrated, setIsFrustrated] = useState(false);
-  //   const [isBored, setIsBored] = useState(false);
-  //   const [isAngry, setIsAngry] = useState(false);
-  //   const [isProductive, setIsProductive] = useState(false);
-  //creating an array to store the mood for the day
-  // const [mood, setMood] = useState({
-  //   isGreat: false,
-  //   isSad: false,
-  //   isUnwell: false,
-  //   isNeutral: false,
-  //   isSatisfied: false,
-  //   isFrustrated: false,
-  //   isBored: false,
-  //   isAngry: false,
-  //   isProductive: false,
-  // });
-  // const {
-  //   mood,
-  //   setMood,
-  //   labels,
-  //   handleGreat,
-  //   handleSad,
-  //   handleUnwell,
-  //   handleNeutral,
-  //   handleSatisfied,
-  //   handleFrustrated,
-  //   handleBored,
-  //   handleAngry,
-  //   handleProductive,
-  // } = useContext(PlanifyContext);
-  // const [mood, setMood] = useState(props.mood);
-  // const labels = [
-  //   "great",
-  //   "sad",
-  //   "unwell",
-  //   "neutral",
-  //   "satisfied",
-  //   "frustrated",
-  //   "bored",
-  //   "angry",
-  //   "productive",
-  // ];
-  // console.log(mood);
-  // // functions for Button onClick for different buttons
-
-  // const handleGreat = () => {
-  //   setMood(labels[0]);
-  // };
-  // const handleSad = () => {
-  //   setMood(labels[1]);
-  // };
-  // const handleUnwell = () => {
-  //   setMood(labels[2]);
-  // };
-  // const handleNeutral = () => {
-  //   setMood(labels[3]);
-  // };
-  // const handleSatisfied = () => {
-  //   setMood(labels[4]);
-  // };
-  // const handleFrustrated = () => {
-  //   setMood(labels[5]);
-  // };
-  // const handleBored = () => {
-  //   setMood(labels[6]);
-  // };
-  // const handleAngry = () => {
-  //   setMood(labels[7]);
-  // };
-  // const handleProductive = () => {
-  //   setMood(labels[8]);
-  // };
   return (
     <div>
       <EmojiContainer>
@@ -180,6 +102,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
     </div>
   );
 }
+
 const EmojiContainer = styled.div`
   font-family: var(--font-family);
   border: solid 2px var(--graceful-grey);
@@ -204,14 +127,16 @@ const Button = styled.button`
   padding: 5px;
   align-items: center;
 `;
+
 const Heading = styled.div`
   font-family: var(--font-family);
   font-size: 36px;
   text-align: center;
   color: var(--coffee-brown);
 `;
+
 const Emojis = styled.div`
   display: flex;
-  /* flex-wrap: wrap; */
 `;
+
 export default Emoji;

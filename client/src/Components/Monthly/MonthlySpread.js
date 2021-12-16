@@ -16,7 +16,6 @@ const MonthlySpread = () => {
 
   const [date, setDate] = useState(null);
   const [goals, setGoals] = useState([]);
-  // const [monthlyGoal, setMonthlyGoal] = useState({});
   const navigate = useNavigate();
 
   const handleClick = (e) => {
@@ -121,7 +120,6 @@ const MonthlySpread = () => {
       <Top>
         <DateDiv>{goalMonth}'s goals</DateDiv>
         <Button onClick={handleGoalSubmit}>Save goals by clicking here</Button>
-        <SideBar />
       </Top>
       <Mid>
         <GoalsList
@@ -142,6 +140,7 @@ const MonthlySpread = () => {
             dateClick={(e) => handleDateClick(e)}
           />
         </Calendar>
+        <SideBar />
       </Mid>
       <Bottom>
         <GoalNotes
@@ -154,55 +153,62 @@ const MonthlySpread = () => {
     </Wrapper>
   );
 };
+
 const Wrapper = styled.div`
   height: 500px;
   width: 500px;
   margin: 20px;
   font-size: 20px;
 `;
+
 const Button = styled.button`
   height: 80px;
-  width: 30%;
-  /* margin: auto; */
+  width: 20%;
+  border: solid var(--coffee-brown);
   border-radius: 20px;
-  background-color: rgb(70, 63, 58, 0.2);
-  font-size: 32px;
-  color: var(--coffee-brown);
+  background-color: var(--light-brown);
+  font-size: 28px;
+  color: var(--almost-white);
   font-weight: bold;
   cursor: pointer;
+  &:hover {
+    color: #ef476f;
+  }
 `;
+
 const DateDiv = styled.div`
   height: 80px;
   width: 20%;
   border-radius: 10px;
-  /* border: solid var(--coffee-brown); */
-  background-color: rgb(70, 63, 58, 0.2);
-  color: var(--coffee-brown);
+  border: solid var(--coffee-brown);
+  background-color: var(--light-brown);
+  color: var(--almost-white);
   font-weight: bold;
   font-size: 32px;
   text-align: center;
-  padding: 1px 6px;
+  padding-top: 15px;
 `;
+
 const Top = styled.div`
   width: 100vw;
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
 `;
+
 export const Mid = styled.div`
   width: 100vw;
   display: flex;
-  justify-content: space-around;
-  border: solid greenyellow;
-  /* background-color: rgb(70, 63, 58, 0.2); */
-  /* margin: 10px 0; */
+  justify-content: space-between;
 `;
+
 const Bottom = styled.div`
   width: fit-content;
   display: flex;
   justify-content: space-between;
   color: var(--coffee-brown);
 `;
+
 const Para = styled.p`
   font-size: 32px;
   color: var(--coffee-brown);
@@ -210,9 +216,11 @@ const Para = styled.p`
   border-radius: 10px;
   padding: 10px;
 `;
+
 const Calendar = styled.div`
   display: flex;
   flex-direction: column;
   font-weight: bold;
 `;
+
 export default MonthlySpread;

@@ -143,6 +143,9 @@ const AnnualGoals = () => {
     </Container>
   );
 };
+
+//had to do some of the styling in a .css file as this is a library for calendar
+
 const Container = styled.div`
   width: 100%;
   min-height: calc(100vh -200px);

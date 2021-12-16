@@ -9,9 +9,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 const moment = require("moment");
 
 const Home = () => {
-  // const today = new Date();
   const { user, isAuthenticated, isLoading } = useAuth0();
   var date = moment().format("dddd, MMMM Do YYYY");
+
   // to customize background image depending on the season
   const monthNow = moment().format("MMM").toLowerCase();
   console.log(monthNow);
@@ -106,6 +106,7 @@ const Para = styled.p`
   font-size: 23px;
   font-family: var(--font-family);
 `;
+
 const TimeSpace = styled.div`
   z-index: 100;
   position: absolute;
@@ -117,6 +118,7 @@ const TimeSpace = styled.div`
   font-weight: bold;
   color: var(--almost-white);
 `;
+
 const BackgroundImage = styled.div`
   margin: 0px;
   background-image: url(${(props) => props.image});

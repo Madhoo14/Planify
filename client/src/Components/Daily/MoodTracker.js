@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Picker from "emoji-picker-react";
-// decide later if you wnat to use it in the project
+// decide later if you want to use it in the project
 //for now I am going to comment out the component
 //where it is currently being called - AnnualSpread
 function MoodTracker() {
