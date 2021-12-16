@@ -53,7 +53,7 @@ export default createGlobalStyle`
 height: 100%;
 width:100%;
 margin: 0;
-border: solid;
+
     }
     ol, ul {
         list-style: none;

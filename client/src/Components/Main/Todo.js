@@ -119,5 +119,8 @@ const Button = styled.button`
   padding: 5px;
   align-items: center;
   color: var(--coffee-brown);
+  &:hover {
+    color: #ef476f;
+  }
 `;
 export default Todo;

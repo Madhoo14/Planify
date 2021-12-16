@@ -40,6 +40,7 @@ const AnnualSpread = () => {
     <>
       <CalendarContainer>
         <CalendarPart>
+          <Para>Click on any date to go to the Daily Spread for the date</Para>
           <Calendar
             value={dateId}
             onDayClick={(date, event) => clicker(date, event)}
@@ -74,4 +75,10 @@ const CalendarPart = styled.div`
 const SidebarPart = styled.div`
   width: 18%;
 `;
+const Para = styled.p`
+  font-size: 32px;
+  color: var(--coffee-brown);
+  margin-bottom: 5px;
+`;
+
 export default AnnualSpread;

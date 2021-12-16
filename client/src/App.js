@@ -10,6 +10,8 @@ import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import styled from "styled-components";
 import ErrorPage from "./Components/ErrorPage";
+import SearchResults from "./Components/Main/SearchResults";
+import AboutPlanify from "./Components/Main/AboutPlanify";
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,7 +20,7 @@ const App = () => {
         <Header />
         <Routes>
           <Route exact path="/" element={<Home />}></Route>
-          {/* <Route path="/annualspread" element={<AnnualSpread />}></Route> */}
+          <Route path="/about" element={<AboutPlanify />}></Route>
           <Route path="/annualspread" element={<AnnualSpread />}></Route>
           <Route path="/annualgoals/:year" element={<AnnualGoals />}></Route>
           <Route
@@ -26,6 +28,10 @@ const App = () => {
             element={<MonthlySpread />}
           ></Route>
           <Route path="/dailyspread/:dateId" element={<DailySpread />}></Route>
+          <Route
+            path="/searchResult/:searchTerm"
+            element={<SearchResults />}
+          ></Route>
           <Route path="/errorpage" element={<ErrorPage />}></Route>
         </Routes>
         <Footer />
@@ -38,6 +44,5 @@ const AppWrapper = styled.div`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  border: solid red;
 `;
 export default App;

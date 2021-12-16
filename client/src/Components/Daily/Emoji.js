@@ -91,7 +91,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="great"
             role="img"
             name="great"
-            style={{ opacity: mood === labels[0] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[0] ? "1" : "0.5" }}
           >
             😁
           </Button>
@@ -101,7 +101,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="not so good"
             role="img"
             name="sad"
-            style={{ opacity: mood === labels[1] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[1] ? "1" : "0.5" }}
           >
             🙁
           </Button>
@@ -111,7 +111,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="unwell"
             role="img"
             name="unwell"
-            style={{ opacity: mood === labels[2] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[2] ? "1" : "0.5" }}
           >
             🤕
           </Button>
@@ -121,7 +121,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="neutral"
             role="img"
             name="neutral"
-            style={{ opacity: mood === labels[3] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[3] ? "1" : "0.5" }}
           >
             😐
           </Button>
@@ -131,7 +131,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="pleased"
             role="img"
             name="satisfied"
-            style={{ opacity: mood === labels[4] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[4] ? "1" : "0.5" }}
           >
             😌
           </Button>
@@ -141,7 +141,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="frustrated"
             role="img"
             name="frustrated"
-            style={{ opacity: mood === labels[6] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[5] ? "1" : "0.5" }}
           >
             😩
           </Button>
@@ -151,7 +151,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="meh"
             role="img"
             name="bored"
-            style={{ opacity: mood === labels[6] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[6] ? "1" : "0.5" }}
           >
             😶
           </Button>
@@ -161,7 +161,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="mad"
             name="angry"
             role="img"
-            style={{ opacity: mood === labels[7] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[7] ? "1" : "0.5" }}
           >
             😡
           </Button>
@@ -171,7 +171,7 @@ function Emoji({ mood, setMood, handleClickedElement, labels }) {
             title="productive"
             role="img"
             name="productive"
-            style={{ opacity: mood === labels[8] ? "1" : "0.6" }}
+            style={{ opacity: mood === labels[8] ? "1" : "0.5" }}
           >
             😎
           </Button>

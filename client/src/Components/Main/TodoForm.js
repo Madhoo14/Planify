@@ -81,6 +81,10 @@ const TodoButton = styled.button`
   font-family: "Happy Monkey";
   background-color: var(--bckgrnd-clr);
   border: solid 1px var(--almost-white);
+  cursor: pointer;
+  &:hover {
+    color: #ef476f;
+  }
 `;
 const TodoInput = styled.input`
   border-radius: 5px;

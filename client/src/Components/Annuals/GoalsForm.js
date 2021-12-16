@@ -70,6 +70,9 @@ const TodoButton = styled.button`
   color: var(--coffee-brown);
   font-weight: bold;
   font-family: "Happy Monkey";
+  &:hover {
+    color: #ef476f;
+  }
 
   background-color: var(--bckgrnd-clr);
   border: solid 1px var(--almost-white);

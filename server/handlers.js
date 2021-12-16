@@ -108,20 +108,31 @@ const postDailySpread = async (req, res) => {
     client.close();
   }
 };
-
 const postAnnualGoals = async (req, res) => {
   const client = new MongoClient(MONGO_URI, options);
   const db = client.db("planify");
-  // const _id = req.body._id;
-  // const annualGoals = req.body;
-  console.log(req.body);
+  const _id = req.body._id;
   try {
     await client.connect();
-    const createAnnualGoals = await db
-      .collection("annual-goals")
-      .insertOne(req.body);
-    res.status(200).json({ status: 200, data: createAnnualGoals });
+    // const existingAnnualGoals = await db
+    //   .collection("annual-goals")
+    //   .findOne({ _id: _id });
+    // if (existingAnnualGoals) {
+    const replaceAnnualGoals = await db.collection("annual-goals").replaceOne(
+      {
+        _id: _id,
+      },
+      req.body
+    );
+    res.status(200).json({ status: 200, data: replaceAnnualGoals });
     console.log(res.data);
+    // } else {
+    //   const createAnnualGoals = await db
+    //     .collection("annual-goals")
+    //     .insertOne(req.body);
+    //   res.status(200).json({ status: 200, data: createAnnualGoals });
+    //   console.log(res.data);
+    // }
   } catch (err) {
     res.status(500).json({ status: 500, error: err.message });
     console.log(err.message);
@@ -214,6 +225,45 @@ const getMonthlyGoals = async (req, res) => {
   }
 };
 
+const searchTerm = async (req, res) => {
+  const client = new MongoClient(MONGO_URI, options);
+  const db = client.db("planify");
+
+  const { searchTerm } = req.query;
+  console.log(searchTerm);
+  try {
+    await client.connect();
+    await db.collection("daily-spread").createIndex({
+      journal: "text",
+      // todo: "text",
+      // quotes: "text",
+      // gratitude: "text",
+      // weather: "text",
+    });
+    const query = { $text: { $search: searchTerm } };
+    const searchResult = await db
+      .collection("daily-spread")
+      .find(query)
+      .toArray();
+
+    if (searchResult.length > 0) {
+      console.log("SearchResult", searchResult);
+      res.status(200).json({ status: 200, data: searchResult });
+    } else {
+      res.status(404).json({
+        status: 404,
+        data: searchResult,
+        message: "No results found for your search",
+      });
+    }
+  } catch (err) {
+    console.log(err.message);
+    res.status(500).json({ status: 500, error: err.message });
+  } finally {
+    client.close();
+  }
+};
+
 module.exports = {
   createDailySpread,
   getDailySpread,
@@ -222,4 +272,5 @@ module.exports = {
   getAnnualGoals,
   getMonthlyGoals,
   postMonthlyGoals,
+  searchTerm,
 };

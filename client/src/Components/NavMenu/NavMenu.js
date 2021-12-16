@@ -6,7 +6,7 @@ const NavMenu = () => {
     <Wrapper>
       <NavigationMenu to="/">Home</NavigationMenu>
 
-      <NavigationMenu to="/about">About Planify</NavigationMenu>
+      <NavigationMenu to="/about">How to Planify</NavigationMenu>
     </Wrapper>
   );
 };

@@ -182,7 +182,7 @@ function DailySpread() {
       </TopPage>
       <MidPage>
         <TodoList
-          style={{ flexGrow: "1" }}
+          // style={{ flexGrow: "1" }}
           todos={todos}
           setTodos={setTodos}
           addTodo={addTodo}
@@ -228,7 +228,6 @@ const BottomPage = styled.div`
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
-  border: solid purple;
   @media (max-width: 550px) {
     flex-direction: column;
   }
@@ -244,10 +243,12 @@ const Button = styled.button`
   border-radius: 20px;
   background-color: var(--light-brown);
   font-size: 28px;
-  /* color: var(--graceful-grey); */
   color: var(--almost-white);
   font-weight: bold;
   cursor: pointer;
+  &:hover {
+    color: #ef476f;
+  }
 `;
 const TopPage = styled.div`
   display: flex;

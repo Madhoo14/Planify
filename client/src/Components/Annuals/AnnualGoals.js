@@ -8,16 +8,18 @@ import GoalSetting from "./GoalSetting";
 import GoalNotes from "./GoalNotes";
 import PickYear from "./PickYear";
 import { Mid } from "../Monthly/MonthlySpread";
+
 const moment = require("moment");
+
 const AnnualGoals = () => {
   const [goals, setGoals] = useState([]);
-  const [annualGoal, setAnnualGoal] = useState({});
+
   //to pick an year to set the goal for
 
   const [goalYear, setGoalYear] = useState(useParams().year);
   const navigate = useNavigate();
   let years = [];
-  for (let i = 2020; i <= 2050; i++) {
+  for (let i = 2021; i <= 2030; i++) {
     years.push(i);
   }
   const handleYearChange = (e) => {
@@ -25,7 +27,7 @@ const AnnualGoals = () => {
     setGoalYear(e.target.value);
   };
   console.log(goalYear);
-  // const year = moment(dateId).format("YYYY");
+
   //function to add goal items
   const addGoals = (goal) => {
     if (!goal.text || /^\s*$/.test(goal.text)) {
@@ -50,6 +52,8 @@ const AnnualGoals = () => {
       prev.map((item) => (item.id === goalId ? newValue : item))
     );
   };
+
+  //fn to track completed goals
   const completeGoals = (id) => {
     let updatedGoals = goals.map((goal) => {
       if (goal.id === id) {
@@ -59,15 +63,13 @@ const AnnualGoals = () => {
     });
     setGoals(updatedGoals);
   };
-  console.log(goals);
+
   //goal notes
   const [notes, setNotes] = useState("");
   const handleNotes = (e) => {
     setNotes(e.target.value);
   };
 
-  console.log(notes);
-  console.log(goalYear);
   //api to get annual goals if existing
   useEffect(() => {
     fetch(`/api/annualgoals/${goalYear}`)
@@ -82,7 +84,7 @@ const AnnualGoals = () => {
   //api to post the annual goals to the db
   const handleGoalSubmit = () => {
     console.log("iam in");
-    fetch(`api/postannualgoals/${goalYear}`, {
+    fetch(`/api/postannualgoals/${goalYear}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -147,12 +149,13 @@ const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
 `;
+
 const TopContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
-  border: solid orange;
 `;
+
 const GoalYear = styled.div`
   height: 80px;
   width: 20%;
@@ -175,10 +178,15 @@ const Button = styled.button`
   color: var(--almost-white);
   font-weight: bold;
   cursor: pointer;
+  &:hover {
+    color: #ef476f;
+  }
 `;
+
 const BottomContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
 `;
+
 export default AnnualGoals;

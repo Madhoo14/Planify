@@ -6,7 +6,7 @@ const GoalSetting = () => {
     <GoalSettingContainer>
       <Para>
         <Para>
-          <Header2>A quick guide to set your personal goals</Header2>
+          <Header2>A quick guide to setting your personal goals</Header2>
           <UnorderedList>
             <List>
               First you create your "big picture" of what you want to do with

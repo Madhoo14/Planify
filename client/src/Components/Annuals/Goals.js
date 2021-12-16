@@ -86,6 +86,9 @@ const Button = styled.button`
   padding: 5px;
   align-items: center;
   color: var(--coffee-brown);
+  &:hover {
+    color: #ef476f;
+  }
 `;
 const Wrapper = styled.div`
   font-family: "Happy Monkey";

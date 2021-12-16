@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 //icons
 import { BsSearch } from "react-icons/bs";
 import { RiCloseFill } from "react-icons/ri";
@@ -6,22 +7,27 @@ import { RiCloseFill } from "react-icons/ri";
 import styled from "styled-components";
 
 const Search = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
+  const [searchResult, setSearchResult] = useState(null);
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
   // console.log for now. need and end point and a fetch later for it
   const handleKeyDown = (eve) => {
     if (eve.key === "Enter") {
-      console.log("enter key pressed");
+      navigate(`/searchResult/${searchTerm}`);
     }
   };
+
   const handleSubmit = () => {
-    console.log("Search icon clicked");
+    navigate(`/searchResult/${searchTerm}`);
   };
+
   const handleClearClick = () => {
     setSearchTerm("");
   };
+
   return (
     <SearchWrapper>
       <ButtonSearch onClick={handleSubmit}>
