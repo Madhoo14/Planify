@@ -114,6 +114,8 @@ const EmojiContainer = styled.div`
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
+
+  align-items: center;
 `;
 
 const Button = styled.button`
@@ -126,6 +128,7 @@ const Button = styled.button`
   margin: 10px;
   padding: 5px;
   align-items: center;
+  justify-content: center;
 `;
 
 const Heading = styled.div`

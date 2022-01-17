@@ -8,7 +8,7 @@ export default createGlobalStyle`
       --coffee-brown: #463f3a;
       --light-brown: #8A817C; /* HSL 21, 6, 51*/
       --graceful-grey: #BCB8B1;
-      --almost-white: #F4F3EE;
+      --black-color: #0A0A0A;
       --skin:#E0AFA0;
       --max-content-width: 1200px;
       --background-transparent: rgb(188, 184, 177,0.3);
