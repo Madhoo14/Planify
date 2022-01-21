@@ -18,7 +18,7 @@ const SideBar = () => {
   );
 };
 const SideBarContainer = styled.div`
-  height: 180px;
+  height: auto;
   min-width: 50px;
   display: flex;
   flex-direction: column;
@@ -33,13 +33,24 @@ const SideBarContainer = styled.div`
 
 const SideBarNav = styled(Link)`
   color: var(--coffee-brown);
-  margin-left: 15px;
+  margin: 15px;
   text-decoration: none;
   font-size: 32px;
   font-weight: bold;
+  box-shadow: 0 0 10px rgba(239, 71, 111, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
   &:hover {
     color: #ef476f;
+    box-shadow: 0 0 20px rgba(239, 71, 111, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
+  /* &:hover {
+    color: #ef476f;
+  } */
 `;
 
 export default SideBar;

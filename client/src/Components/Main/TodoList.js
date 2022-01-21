@@ -32,6 +32,14 @@ const Head1 = styled.h1`
   font-size: 24px;
 `;
 
-const Container = styled.div``;
+const Container = styled.div`
+  width: 30%;
+  height: auto;
+  background-color: var(--bckgrnd-clr);
+  border-radius: 10px;
+  @media (max-width: 1810px) {
+    padding-left: 15px;
+  }
+`;
 
 export default TodoList;

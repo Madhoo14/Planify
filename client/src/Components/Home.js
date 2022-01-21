@@ -60,8 +60,8 @@ const Home = () => {
                 </li>
               </ol>
               <br></br>
-              The frog is the Things you don’t want to do, but actually need to
-              do.<br></br>
+              The frog represents the "Things" you don’t want to do, but
+              actually need to do.<br></br>
               <h1>
                 <center>
                   Eat <strong> that </strong>Frog

@@ -19,13 +19,16 @@ function Gratitude({ gratitude, setGratitude, handleGratitude }) {
 
 const TextArea = styled.textarea`
   min-width: 45vw;
-  height: 200px;
+  height: auto;
   font-size: 32px;
   outline: none;
   margin-top: 25px;
   border: solid 2px var(--graceful-grey);
   background-color: var(--bckgrnd-clr);
   border-radius: 10px;
+  @media (max-width: 1810px) {
+    height: auto;
+  }
 `;
 
 const GratitudeWrapper = styled.div`

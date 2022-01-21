@@ -67,8 +67,16 @@ const ButtonSearch = styled.button`
   border-radius: 10px 0px 0px 10px;
   margin: 15px 0;
   padding: 1px 2px;
+  box-shadow: 0 0 10px rgba(239, 71, 111, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
   &:hover {
     color: #ef476f;
+    box-shadow: 0 0 20px rgba(239, 71, 111, 0.5);
+    /* -webkit-transform: scale(1.1);
+    transform: scale(1.1); */
   }
 `;
 
@@ -93,8 +101,16 @@ const ButtonClear = styled.button`
   align-items: center;
   margin: 15px 0;
   padding: 1px 2px;
+  box-shadow: 0 0 10px rgba(239, 71, 111, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
   &:hover {
     color: #ef476f;
+    box-shadow: 0 0 20px rgba(239, 71, 111, 0.5);
+    /* -webkit-transform: scale(1.1);
+    transform: scale(1.1); */
   }
 `;
 

@@ -6,7 +6,7 @@ function Journal({ entry, setEntry, handleEntry }) {
     <JournalWrapper>
       <Form>
         <JournalSection>
-          <Label for="journal">you can journal here...</Label>
+          <Label for="journal">you can journal below...</Label>
           <TextArea
             id="journal"
             name="journal"
@@ -39,7 +39,7 @@ const JournalSection = styled.div`
 
 const TextArea = styled.textarea`
   width: 800px;
-  height: 400px;
+  height: auto;
   font-size: 32px;
   outline: none;
   border: solid 2px var(--graceful-grey);
@@ -50,6 +50,7 @@ const TextArea = styled.textarea`
 const JournalWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  background-color: var(--bckgrnd-clr);
 `;
 
 export default Journal;

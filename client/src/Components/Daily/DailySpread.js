@@ -237,15 +237,23 @@ const Section = styled.div`
 const Button = styled.button`
   height: 80px;
   width: 20%;
-  border: solid var(--coffee-brown);
+  border: solid 1px white;
   border-radius: 20px;
-  background-color: var(--light-brown);
+  background-image: radial-gradient(#ef476f, var(--light-brown));
   font-size: 28px;
-  color: var(--almost-white);
+  color: var(--coffee-brown);
   font-weight: bold;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
   &:hover {
-    color: #ef476f;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
   }
 `;
 
@@ -262,8 +270,9 @@ const DateDiv = styled.div`
   height: 80px;
   width: 20%;
   border-radius: 10px;
-  border: solid var(--coffee-brown);
+  border: solid 1px white;
   background-color: var(--light-brown);
+  background-image: radial-gradient(#ef476f, var(--light-brown));
   color: var(--almost-white);
   font-weight: bold;
   font-size: 28px;

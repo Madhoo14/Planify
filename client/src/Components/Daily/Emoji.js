@@ -107,15 +107,17 @@ const EmojiContainer = styled.div`
   font-family: var(--font-family);
   border: solid 2px var(--graceful-grey);
   width: 45vw;
-  height: 200px;
+  height: auto;
   border-radius: 10px;
   background-color: var(--bckgrnd-clr);
   margin-top: 25px;
   margin-bottom: 25px;
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  @media (max-width: 1810px) {
+    height: auto;
+  }
 `;
 
 const Button = styled.button`
@@ -140,6 +142,10 @@ const Heading = styled.div`
 
 const Emojis = styled.div`
   display: flex;
+  @media (max-width: 1810px) {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+  }
 `;
 
 export default Emoji;
